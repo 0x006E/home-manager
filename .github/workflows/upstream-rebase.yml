@@ -1,0 +1,82 @@
+name: Update Branches with Upstream
+
+on:
+  push:
+    branches:
+    - master
+    - updator
+  pull_request:
+    branches:
+    - master
+    - updator
+  schedule:
+    # Runs twice a day: at 12:00 UTC and 00:00 UTC
+    - cron: "0 0,12 * * *"
+  workflow_dispatch:  # Allows manual triggering of the workflow
+
+jobs:
+  update-release-24-11:
+    runs-on: ubuntu-latest
+    name: Sync release-24.11 with upstream latest
+
+    steps:
+    # Step 1: run a standard checkout action, provided by github
+    - name: Checkout release-24.11
+      uses: actions/checkout@v4
+      with:
+        ref: release-24.11
+        fetch-depth: 0
+        # submodules: 'recursive'     ### may be needed in your situation
+
+    # Step 2: run this sync action - specify the upstream repo, upstream branch to sync with, and target sync branch
+    - name: Pull (Fast-Forward) upstream changes
+      id: sync
+      uses: aormsby/Fork-Sync-With-Upstream-action@v2.1
+      with:
+        upstream_repository: nix-community/home-manager
+        upstream_branch: release-24.11
+        target_branch: release-24.11
+        git_pull_args: --rebase                    # optional arg use, defaults to simple 'pull'
+        github_token: ${{ secrets.GITHUB_TOKEN }}   # optional, for accessing repos that require authentication
+
+    # Step 3: Display a message if 'sync' step had new commits (simple test)
+    - name: Check for new commits
+      if: steps.sync.outputs.has_new_commits
+      run: echo "There were new commits."
+
+    # Step 4: Print a helpful timestamp for your records (not required, just nice)
+    - name: Timestamp
+      run: date
+          
+  sync_with_upstream:
+    runs-on: ubuntu-latest
+    name: Sync main with upstream latest
+
+    steps:
+    # Step 1: run a standard checkout action, provided by github
+    - name: Checkout master
+      uses: actions/checkout@v4
+      with:
+        ref: master
+        fetch-depth: 0
+        # submodules: 'recursive'     ### may be needed in your situation
+
+    # Step 2: run this sync action - specify the upstream repo, upstream branch to sync with, and target sync branch
+    - name: Pull (Fast-Forward) upstream changes
+      id: sync
+      uses: aormsby/Fork-Sync-With-Upstream-action@v2.1
+      with:
+        upstream_repository: nix-community/home-manager
+        upstream_branch: master
+        target_branch: master
+        git_pull_args: --rebase                    # optional arg use, defaults to simple 'pull'
+        github_token: ${{ secrets.GITHUB_TOKEN }}   # optional, for accessing repos that require authentication
+
+    # Step 3: Display a message if 'sync' step had new commits (simple test)
+    - name: Check for new commits
+      if: steps.sync.outputs.has_new_commits
+      run: echo "There were new commits."
+
+    # Step 4: Print a helpful timestamp for your records (not required, just nice)
+    - name: Timestamp
+      run: date
