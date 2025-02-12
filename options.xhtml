@@ -3002,7 +3002,7 @@ the IMAP, SMTP, and JMAP server configuration may be set
 automatically.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-one of “plain”, “gmail.com”, “runbox.com”, “fastmail.com”, “yandex.com”, “outlook.office365.com”</p>
+one of “plain”, “gmail.com”, “runbox.com”, “fastmail.com”, “yandex.com”, “outlook.office365.com”, “migadu.com”</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">&quot;plain&quot;</code></p>
@@ -19997,7 +19997,10 @@ package</p>
 <code class="filename">$XDG_CONFIG_HOME/eww</code>.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-path</p>
+null or path</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span>
 <code class="literal">./eww-config-dir</code></p>
@@ -25793,6 +25796,138 @@ list of string</p>
 <tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/git-credential-oauth.nix" target="_top">
 &lt;home-manager/modules/programs/git-credential-oauth.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.git-worktree-switcher.enable"></a><a class="term" href="options.xhtml#opt-programs.git-worktree-switcher.enable"><code class="option">programs.git-worktree-switcher.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable git-worktree-switcher.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/git-worktree-switcher.nix" target="_top">
+&lt;home-manager/modules/programs/git-worktree-switcher.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.git-worktree-switcher.enableBashIntegration"></a><a class="term" href="options.xhtml#opt-programs.git-worktree-switcher.enableBashIntegration"><code class="option">programs.git-worktree-switcher.enableBashIntegration</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable Bash integration.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<a class="xref" href="options.xhtml#opt-home.shell.enableBashIntegration"  ><code class="option">home.shell.enableBashIntegration</code></a></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/git-worktree-switcher.nix" target="_top">
+&lt;home-manager/modules/programs/git-worktree-switcher.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.git-worktree-switcher.enableFishIntegration"></a><a class="term" href="options.xhtml#opt-programs.git-worktree-switcher.enableFishIntegration"><code class="option">programs.git-worktree-switcher.enableFishIntegration</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable Fish integration.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<a class="xref" href="options.xhtml#opt-home.shell.enableFishIntegration"  ><code class="option">home.shell.enableFishIntegration</code></a></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/git-worktree-switcher.nix" target="_top">
+&lt;home-manager/modules/programs/git-worktree-switcher.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.git-worktree-switcher.enableZshIntegration"></a><a class="term" href="options.xhtml#opt-programs.git-worktree-switcher.enableZshIntegration"><code class="option">programs.git-worktree-switcher.enableZshIntegration</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable Zsh integration.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<a class="xref" href="options.xhtml#opt-home.shell.enableZshIntegration"  ><code class="option">home.shell.enableZshIntegration</code></a></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/git-worktree-switcher.nix" target="_top">
+&lt;home-manager/modules/programs/git-worktree-switcher.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.git-worktree-switcher.package"></a><a class="term" href="options.xhtml#opt-programs.git-worktree-switcher.package"><code class="option">programs.git-worktree-switcher.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The git-worktree-switcher package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.git-worktree-switcher</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/git-worktree-switcher.nix" target="_top">
+&lt;home-manager/modules/programs/git-worktree-switcher.nix&gt;
 </a></code>
 </td></tr>
 </table>
@@ -38412,8 +38547,10 @@ string</p>
 <p><span class="emphasis"><em>Type:</em></span>
 one of “alias”, “attach”, “browser”, “compose”, “editor”, “generic”, “index”, “mix”, “pager”, “pgp”, “postpone”, “query”, “smime” or list of (one of “alias”, “attach”, “browser”, “compose”, “editor”, “generic”, “index”, “mix”, “pager”, “pgp”, “postpone”, “query”, “smime”)</p>
 
-<p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">&quot;index&quot;</code></p>
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting">[
+  &quot;index&quot;
+]
+</code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -38610,8 +38747,10 @@ string</p>
 <p><span class="emphasis"><em>Type:</em></span>
 one of “alias”, “attach”, “browser”, “compose”, “editor”, “generic”, “index”, “mix”, “pager”, “pgp”, “postpone”, “query”, “smime” or list of (one of “alias”, “attach”, “browser”, “compose”, “editor”, “generic”, “index”, “mix”, “pager”, “pgp”, “postpone”, “query”, “smime”)</p>
 
-<p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">&quot;index&quot;</code></p>
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting">[
+  &quot;index&quot;
+]
+</code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
