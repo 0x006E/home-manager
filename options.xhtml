@@ -25504,7 +25504,7 @@ attribute set of string</p>
 Valid values are <code class="literal">openpgp</code> (OpenPGP/GnuPG), <code class="literal">ssh</code> (SSH), and <code class="literal">x509</code> (X.509 certificates).</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-one of “openpgp”, “ssh”, “x509”</p>
+null or one of “openpgp”, “ssh”, “x509”</p>
 
 <p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting">&quot;openpgp&quot; for state version &lt; 25.05,
 undefined for state version ≥ 25.05
@@ -25555,10 +25555,10 @@ null or string</p>
 <p>Whether commits and tags should be signed by default.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-boolean</p>
+null or boolean</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">false</code></p>
+<code class="literal">null</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -25579,7 +25579,7 @@ boolean</p>
 <p>Path to signer binary to use.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-string</p>
+null or string</p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -37189,7 +37189,7 @@ package</p>
 <code class="literal">&lt;derivation mpv-with-scripts-0.39.0&gt;</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span>
-<code class="literal">pkgs.wrapMpv (pkgs.mpv-unwrapped.override { vapoursynthSupport = true; }) { youtubeSupport = true; }</code></p>
+<code class="literal">pkgs.mpv-unwrapped.wrapper { mpv = pkgs.mpv-unwrapped.override { vapoursynthSupport = true; }; youtubeSupport = true; }</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -40207,7 +40207,7 @@ boolean</p>
 like <span class="command"><strong>nh os switch</strong></span>.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-null or path</p>
+null or (optionally newline-terminated) single-line string</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">null</code></p>
