@@ -8413,6 +8413,33 @@ signed integer</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-home.pointerCursor.sway.enable"></a><a class="term" href="options.xhtml#opt-home.pointerCursor.sway.enable"><code class="option">home.pointerCursor.sway.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable sway config generation for <code class="option">home.pointerCursor</code>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/config/home-cursor.nix" target="_top">
+&lt;home-manager/modules/config/home-cursor.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-home.pointerCursor.x11.enable"></a><a class="term" href="options.xhtml#opt-home.pointerCursor.x11.enable"><code class="option">home.pointerCursor.x11.enable</code>
   </a>
  </span>
@@ -51009,6 +51036,97 @@ TOML value</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.swayimg.enable"></a><a class="term" href="options.xhtml#opt-programs.swayimg.enable"><code class="option">programs.swayimg.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable swayimg.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/swayimg.nix" target="_top">
+&lt;home-manager/modules/programs/swayimg.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.swayimg.package"></a><a class="term" href="options.xhtml#opt-programs.swayimg.package"><code class="option">programs.swayimg.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The swayimg package to install</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.swayimg</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/swayimg.nix" target="_top">
+&lt;home-manager/modules/programs/swayimg.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.swayimg.settings"></a><a class="term" href="options.xhtml#opt-programs.swayimg.settings"><code class="option">programs.swayimg.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to
+<code class="filename">$XDG_CONFIG_HOME/swayimg/config</code>. See <a class="link" href="https://github.com/artemsen/swayimg/blob/master/extra/swayimgrc"  target="_top">https://github.com/artemsen/swayimg/blob/master/extra/swayimgrc</a> for a list of available options.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of section of an INI file (attrs of INI atom (null, bool, int, float or string))</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  viewer = {
+    window = &quot;#10000010&quot;;
+    scale = &quot;fill&quot;;
+  };
+  &quot;info.viewer&quot; = {
+    top_left = &quot;+name,+format&quot;;
+  };
+  &quot;keys.viewer&quot; = {
+    &quot;Shift+r&quot; = &quot;rand_file&quot;;
+  };
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/swayimg.nix" target="_top">
+&lt;home-manager/modules/programs/swayimg.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.swaylock.enable"></a><a class="term" href="options.xhtml#opt-programs.swaylock.enable"><code class="option">programs.swaylock.enable</code>
   </a>
  </span>
@@ -53148,6 +53266,31 @@ package</p>
 
 <p><span class="emphasis"><em>Example:</em></span>
 <code class="literal">pkgs.thunderbird-91</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/thunderbird.nix" target="_top">
+&lt;home-manager/modules/programs/thunderbird.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.thunderbird.nativeMessagingHosts"></a><a class="term" href="options.xhtml#opt-programs.thunderbird.nativeMessagingHosts"><code class="option">programs.thunderbird.nativeMessagingHosts</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Additional packages containing native messaging hosts that should be
+made available to Thunderbird extensions.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">[ ]</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -55992,6 +56135,99 @@ YAML value</p>
 <tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vim-vint.nix" target="_top">
 &lt;home-manager/modules/programs/vim-vint.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vinegar.enable"></a><a class="term" href="options.xhtml#opt-programs.vinegar.enable"><code class="option">programs.vinegar.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable Vinegar.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vinegar.nix" target="_top">
+&lt;home-manager/modules/programs/vinegar.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vinegar.package"></a><a class="term" href="options.xhtml#opt-programs.vinegar.package"><code class="option">programs.vinegar.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The vinegar package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.vinegar</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vinegar.nix" target="_top">
+&lt;home-manager/modules/programs/vinegar.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vinegar.settings"></a><a class="term" href="options.xhtml#opt-programs.vinegar.settings"><code class="option">programs.vinegar.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to <code class="filename">$XDG_CONFIG_HOME/vinegar/config.toml</code>.</p><p>See <a class="link" href="https://vinegarhq.org/Configuration/"  target="_top">https://vinegarhq.org/Configuration/</a> for more information.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (TOML value)</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  env = {
+    WINEFSYNC = &quot;1&quot;;
+  };
+  studio = {
+    dxvk = false;
+    env = {
+      DXVK_HUD = &quot;0&quot;;
+      MANGOHUD = &quot;1&quot;;
+    };
+    fflags = {
+      DFIntTaskSchedulerTargetFps = 144;
+    };
+    renderer = &quot;Vulkan&quot;;
+  };
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vinegar.nix" target="_top">
+&lt;home-manager/modules/programs/vinegar.nix&gt;
 </a></code>
 </td></tr>
 </table>
@@ -82457,6 +82693,153 @@ signed integer</p>
 <tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/wlsunset.nix" target="_top">
 &lt;home-manager/modules/services/wlsunset.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.wluma.enable"></a><a class="term" href="options.xhtml#opt-services.wluma.enable"><code class="option">services.wluma.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable Enable wluma, a service for automatic brightness adjustment.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/wluma.nix" target="_top">
+&lt;home-manager/modules/services/wluma.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.wluma.package"></a><a class="term" href="options.xhtml#opt-services.wluma.package"><code class="option">services.wluma.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Package providing <span class="command"><strong>wluma</strong></span>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.wluma</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/wluma.nix" target="_top">
+&lt;home-manager/modules/services/wluma.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.wluma.settings"></a><a class="term" href="options.xhtml#opt-services.wluma.settings"><code class="option">services.wluma.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration to use for wluma. See
+<a class="link" href="https://github.com/maximbaz/wluma/blob/main/config.toml"  target="_top">https://github.com/maximbaz/wluma/blob/main/config.toml</a>
+for available options.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+TOML value</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  als = {
+    iio = {
+      path = &quot;&quot;;
+      thresholds = {
+        &quot;0&quot; = &quot;night&quot;;
+        &quot;20&quot; = &quot;dark&quot;;
+        &quot;250&quot; = &quot;normal&quot;;
+        &quot;500&quot; = &quot;bright&quot;;
+        &quot;80&quot; = &quot;dim&quot;;
+        &quot;800&quot; = &quot;outdoors&quot;;
+      };
+    };
+  };
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/wluma.nix" target="_top">
+&lt;home-manager/modules/services/wluma.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.wluma.systemd.enable"></a><a class="term" href="options.xhtml#opt-services.wluma.systemd.enable"><code class="option">services.wluma.systemd.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Wluma systemd integration</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/wluma.nix" target="_top">
+&lt;home-manager/modules/services/wluma.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.wluma.systemd.target"></a><a class="term" href="options.xhtml#opt-services.wluma.systemd.target"><code class="option">services.wluma.systemd.target</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The systemd target that will automatically start the Wluma service.</p><p>When setting this value to <code class="literal">&quot;sway-session.target&quot;</code>,
+make sure to also enable <code class="option">wayland.windowManager.sway.systemd.enable</code>,
+otherwise the service may never be started.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">config.wayland.systemd.target</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">&quot;sway-session.target&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/wluma.nix" target="_top">
+&lt;home-manager/modules/services/wluma.nix&gt;
 </a></code>
 </td></tr>
 </table>
