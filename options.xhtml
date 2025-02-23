@@ -3652,6 +3652,35 @@ list of string</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-accounts.email.accounts._name_.imapnotify.extraArgs"></a><a class="term" href="options.xhtml#opt-accounts.email.accounts._name_.imapnotify.extraArgs"><code class="option">accounts.email.accounts.&lt;name&gt;.imapnotify.extraArgs</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Extra arguments to pass to goimapnotify.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">[ ]</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">[
+  &quot;-wait 1&quot;
+]
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/imapnotify.nix" target="_top">
+&lt;home-manager/modules/services/imapnotify.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-accounts.email.accounts._name_.imapnotify.extraConfig"></a><a class="term" href="options.xhtml#opt-accounts.email.accounts._name_.imapnotify.extraConfig"><code class="option">accounts.email.accounts.&lt;name&gt;.imapnotify.extraConfig</code>
   </a>
  </span>
@@ -3664,11 +3693,6 @@ JSON value</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">{ }</code></p>
-
-<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
-  wait = 10;
-}
-</code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -21083,6 +21107,30 @@ list of package</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.firefox.pkcs11Modules"></a><a class="term" href="options.xhtml#opt-programs.firefox.pkcs11Modules"><code class="option">programs.firefox.pkcs11Modules</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Additional packages to be loaded as PKCS #11 modules in Firefox.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">[ ]</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/firefox.nix" target="_top">
+&lt;home-manager/modules/programs/firefox.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.firefox.policies"></a><a class="term" href="options.xhtml#opt-programs.firefox.policies"><code class="option">programs.firefox.policies</code>
   </a>
  </span>
@@ -22600,6 +22648,30 @@ list of string</p>
 <dd>
 <p>Additional packages containing native messaging hosts that should be
 made available to Floorp extensions.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">[ ]</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/floorp.nix" target="_top">
+&lt;home-manager/modules/programs/floorp.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.floorp.pkcs11Modules"></a><a class="term" href="options.xhtml#opt-programs.floorp.pkcs11Modules"><code class="option">programs.floorp.pkcs11Modules</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Additional packages to be loaded as PKCS #11 modules in Firefox.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 list of package</p>
@@ -31808,6 +31880,91 @@ submodule</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.jqp.enable"></a><a class="term" href="options.xhtml#opt-programs.jqp.enable"><code class="option">programs.jqp.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable jqp, jq playground.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/jqp.nix" target="_top">
+&lt;home-manager/modules/programs/jqp.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.jqp.package"></a><a class="term" href="options.xhtml#opt-programs.jqp.package"><code class="option">programs.jqp.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The jqp package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.jqp</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/jqp.nix" target="_top">
+&lt;home-manager/modules/programs/jqp.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.jqp.settings"></a><a class="term" href="options.xhtml#opt-programs.jqp.settings"><code class="option">programs.jqp.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Jqp configuration</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+YAML value</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  theme = {
+    chromaStyleOverrides = {
+      kc = &quot;#009900 underline&quot;;
+    };
+    name = &quot;monokai&quot;;
+  };
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/jqp.nix" target="_top">
+&lt;home-manager/modules/programs/jqp.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.jujutsu.enable"></a><a class="term" href="options.xhtml#opt-programs.jujutsu.enable"><code class="option">programs.jujutsu.enable</code>
   </a>
  </span>
@@ -36092,6 +36249,30 @@ list of string</p>
   &quot;de&quot;
 ]
 </code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/librewolf.nix" target="_top">
+&lt;home-manager/modules/programs/librewolf.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.librewolf.pkcs11Modules"></a><a class="term" href="options.xhtml#opt-programs.librewolf.pkcs11Modules"><code class="option">programs.librewolf.pkcs11Modules</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Additional packages to be loaded as PKCS #11 modules in Firefox.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">[ ]</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -53525,6 +53706,56 @@ strings concatenated with “\n”</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.thunderbird.profiles._name_.feedAccounts"></a><a class="term" href="options.xhtml#opt-programs.thunderbird.profiles._name_.feedAccounts"><code class="option">programs.thunderbird.profiles.&lt;name&gt;.feedAccounts</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Attribute set of feed accounts. Feeds themselves have to be
+managed through Thunderbird’s settings. This option allows
+feeds to coexist with declaratively managed email accounts.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (submodule)</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/thunderbird.nix" target="_top">
+&lt;home-manager/modules/programs/thunderbird.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.thunderbird.profiles._name_.feedAccounts._name_.name"></a><a class="term" href="options.xhtml#opt-programs.thunderbird.profiles._name_.feedAccounts._name_.name"><code class="option">programs.thunderbird.profiles.&lt;name&gt;.feedAccounts.&lt;name&gt;.name</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>This feed account’s name.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string <span class="emphasis"><em>(read only)</em></span></p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">&quot;‹name›&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/thunderbird.nix" target="_top">
+&lt;home-manager/modules/programs/thunderbird.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.thunderbird.profiles._name_.isDefault"></a><a class="term" href="options.xhtml#opt-programs.thunderbird.profiles._name_.isDefault"><code class="option">programs.thunderbird.profiles.&lt;name&gt;.isDefault</code>
   </a>
  </span>
@@ -56434,54 +56665,6 @@ boolean</p>
 </dd>
 <dt>
  <span class="term">
- <a id="opt-programs.vscode.enableExtensionUpdateCheck"></a><a class="term" href="options.xhtml#opt-programs.vscode.enableExtensionUpdateCheck"><code class="option">programs.vscode.enableExtensionUpdateCheck</code>
-  </a>
- </span>
-</dt>
-<dd>
-<p>Whether to enable update notifications for extensions.</p>
-
-<p><span class="emphasis"><em>Type:</em></span>
-boolean</p>
-
-<p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">true</code></p>
-
-<p><span class="emphasis"><em>Declared by:</em></span></p>
-<table border="0" summary="Simple list" class="simplelist">
-<tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix" target="_top">
-&lt;home-manager/modules/programs/vscode.nix&gt;
-</a></code>
-</td></tr>
-</table>
-</dd>
-<dt>
- <span class="term">
- <a id="opt-programs.vscode.enableUpdateCheck"></a><a class="term" href="options.xhtml#opt-programs.vscode.enableUpdateCheck"><code class="option">programs.vscode.enableUpdateCheck</code>
-  </a>
- </span>
-</dt>
-<dd>
-<p>Whether to enable update checks/notifications.</p>
-
-<p><span class="emphasis"><em>Type:</em></span>
-boolean</p>
-
-<p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">true</code></p>
-
-<p><span class="emphasis"><em>Declared by:</em></span></p>
-<table border="0" summary="Simple list" class="simplelist">
-<tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix" target="_top">
-&lt;home-manager/modules/programs/vscode.nix&gt;
-</a></code>
-</td></tr>
-</table>
-</dd>
-<dt>
- <span class="term">
  <a id="opt-programs.vscode.package"></a><a class="term" href="options.xhtml#opt-programs.vscode.package"><code class="option">programs.vscode.package</code>
   </a>
  </span>
@@ -56497,70 +56680,6 @@ package</p>
 
 <p><span class="emphasis"><em>Example:</em></span>
 <code class="literal">pkgs.vscodium</code></p>
-
-<p><span class="emphasis"><em>Declared by:</em></span></p>
-<table border="0" summary="Simple list" class="simplelist">
-<tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix" target="_top">
-&lt;home-manager/modules/programs/vscode.nix&gt;
-</a></code>
-</td></tr>
-</table>
-</dd>
-<dt>
- <span class="term">
- <a id="opt-programs.vscode.extensions"></a><a class="term" href="options.xhtml#opt-programs.vscode.extensions"><code class="option">programs.vscode.extensions</code>
-  </a>
- </span>
-</dt>
-<dd>
-<p>The extensions Visual Studio Code should be started with.</p>
-
-<p><span class="emphasis"><em>Type:</em></span>
-list of package</p>
-
-<p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">[ ]</code></p>
-
-<p><span class="emphasis"><em>Example:</em></span>
-<code class="literal">[ pkgs.vscode-extensions.bbenoist.nix ]</code></p>
-
-<p><span class="emphasis"><em>Declared by:</em></span></p>
-<table border="0" summary="Simple list" class="simplelist">
-<tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix" target="_top">
-&lt;home-manager/modules/programs/vscode.nix&gt;
-</a></code>
-</td></tr>
-</table>
-</dd>
-<dt>
- <span class="term">
- <a id="opt-programs.vscode.globalSnippets"></a><a class="term" href="options.xhtml#opt-programs.vscode.globalSnippets"><code class="option">programs.vscode.globalSnippets</code>
-  </a>
- </span>
-</dt>
-<dd>
-<p>Defines global user snippets.</p>
-
-<p><span class="emphasis"><em>Type:</em></span>
-JSON value</p>
-
-<p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">{ }</code></p>
-
-<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
-  fixme = {
-    body = [
-      &quot;$LINE_COMMENT FIXME: $0&quot;
-    ];
-    description = &quot;Insert a FIXME remark&quot;;
-    prefix = [
-      &quot;fixme&quot;
-    ];
-  };
-}
-</code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -56657,7 +56776,177 @@ absolute path</p>
 </dd>
 <dt>
  <span class="term">
- <a id="opt-programs.vscode.keybindings"></a><a class="term" href="options.xhtml#opt-programs.vscode.keybindings"><code class="option">programs.vscode.keybindings</code>
+ <a id="opt-programs.vscode.mutableExtensionsDir"></a><a class="term" href="options.xhtml#opt-programs.vscode.mutableExtensionsDir"><code class="option">programs.vscode.mutableExtensionsDir</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether extensions can be installed or updated manually
+or by Visual Studio Code. Mutually exclusive to
+programs.vscode.profiles.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix" target="_top">
+&lt;home-manager/modules/programs/vscode.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscode.profiles"></a><a class="term" href="options.xhtml#opt-programs.vscode.profiles"><code class="option">programs.vscode.profiles</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>A list of all VSCode profiles. Mutually exclusive
+to programs.vscode.mutableExtensionsDir</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (submodule)</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix" target="_top">
+&lt;home-manager/modules/programs/vscode.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscode.profiles._name_.enableExtensionUpdateCheck"></a><a class="term" href="options.xhtml#opt-programs.vscode.profiles._name_.enableExtensionUpdateCheck"><code class="option">programs.vscode.profiles.&lt;name&gt;.enableExtensionUpdateCheck</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable update notifications for extensions.
+Can only be set for the default profile, but
+it applies to all profiles.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix" target="_top">
+&lt;home-manager/modules/programs/vscode.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscode.profiles._name_.enableUpdateCheck"></a><a class="term" href="options.xhtml#opt-programs.vscode.profiles._name_.enableUpdateCheck"><code class="option">programs.vscode.profiles.&lt;name&gt;.enableUpdateCheck</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable update checks/notifications.
+Can only be set for the default profile, but
+it applies to all profiles.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix" target="_top">
+&lt;home-manager/modules/programs/vscode.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscode.profiles._name_.extensions"></a><a class="term" href="options.xhtml#opt-programs.vscode.profiles._name_.extensions"><code class="option">programs.vscode.profiles.&lt;name&gt;.extensions</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The extensions Visual Studio Code should be started with.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">[ ]</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">[ pkgs.vscode-extensions.bbenoist.nix ]</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix" target="_top">
+&lt;home-manager/modules/programs/vscode.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscode.profiles._name_.globalSnippets"></a><a class="term" href="options.xhtml#opt-programs.vscode.profiles._name_.globalSnippets"><code class="option">programs.vscode.profiles.&lt;name&gt;.globalSnippets</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Defines global user snippets.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  fixme = {
+    body = [
+      &quot;$LINE_COMMENT FIXME: $0&quot;
+    ];
+    description = &quot;Insert a FIXME remark&quot;;
+    prefix = [
+      &quot;fixme&quot;
+    ];
+  };
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix" target="_top">
+&lt;home-manager/modules/programs/vscode.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscode.profiles._name_.keybindings"></a><a class="term" href="options.xhtml#opt-programs.vscode.profiles._name_.keybindings"><code class="option">programs.vscode.profiles.&lt;name&gt;.keybindings</code>
   </a>
  </span>
 </dt>
@@ -56692,7 +56981,7 @@ list of (submodule)</p>
 </dd>
 <dt>
  <span class="term">
- <a id="opt-programs.vscode.keybindings._.args"></a><a class="term" href="options.xhtml#opt-programs.vscode.keybindings._.args"><code class="option">programs.vscode.keybindings.*.args</code>
+ <a id="opt-programs.vscode.profiles._name_.keybindings._.args"></a><a class="term" href="options.xhtml#opt-programs.vscode.profiles._name_.keybindings._.args"><code class="option">programs.vscode.profiles.&lt;name&gt;.keybindings.*.args</code>
   </a>
  </span>
 </dt>
@@ -56721,7 +57010,7 @@ null or JSON value</p>
 </dd>
 <dt>
  <span class="term">
- <a id="opt-programs.vscode.keybindings._.command"></a><a class="term" href="options.xhtml#opt-programs.vscode.keybindings._.command"><code class="option">programs.vscode.keybindings.*.command</code>
+ <a id="opt-programs.vscode.profiles._name_.keybindings._.command"></a><a class="term" href="options.xhtml#opt-programs.vscode.profiles._name_.keybindings._.command"><code class="option">programs.vscode.profiles.&lt;name&gt;.keybindings.*.command</code>
   </a>
  </span>
 </dt>
@@ -56745,7 +57034,7 @@ string</p>
 </dd>
 <dt>
  <span class="term">
- <a id="opt-programs.vscode.keybindings._.key"></a><a class="term" href="options.xhtml#opt-programs.vscode.keybindings._.key"><code class="option">programs.vscode.keybindings.*.key</code>
+ <a id="opt-programs.vscode.profiles._name_.keybindings._.key"></a><a class="term" href="options.xhtml#opt-programs.vscode.profiles._name_.keybindings._.key"><code class="option">programs.vscode.profiles.&lt;name&gt;.keybindings.*.key</code>
   </a>
  </span>
 </dt>
@@ -56769,7 +57058,7 @@ string</p>
 </dd>
 <dt>
  <span class="term">
- <a id="opt-programs.vscode.keybindings._.when"></a><a class="term" href="options.xhtml#opt-programs.vscode.keybindings._.when"><code class="option">programs.vscode.keybindings.*.when</code>
+ <a id="opt-programs.vscode.profiles._name_.keybindings._.when"></a><a class="term" href="options.xhtml#opt-programs.vscode.profiles._name_.keybindings._.when"><code class="option">programs.vscode.profiles.&lt;name&gt;.keybindings.*.when</code>
   </a>
  </span>
 </dt>
@@ -56796,7 +57085,7 @@ null or string</p>
 </dd>
 <dt>
  <span class="term">
- <a id="opt-programs.vscode.languageSnippets"></a><a class="term" href="options.xhtml#opt-programs.vscode.languageSnippets"><code class="option">programs.vscode.languageSnippets</code>
+ <a id="opt-programs.vscode.profiles._name_.languageSnippets"></a><a class="term" href="options.xhtml#opt-programs.vscode.profiles._name_.languageSnippets"><code class="option">programs.vscode.profiles.&lt;name&gt;.languageSnippets</code>
   </a>
  </span>
 </dt>
@@ -56835,35 +57124,7 @@ JSON value</p>
 </dd>
 <dt>
  <span class="term">
- <a id="opt-programs.vscode.mutableExtensionsDir"></a><a class="term" href="options.xhtml#opt-programs.vscode.mutableExtensionsDir"><code class="option">programs.vscode.mutableExtensionsDir</code>
-  </a>
- </span>
-</dt>
-<dd>
-<p>Whether extensions can be installed or updated manually
-or by Visual Studio Code.</p>
-
-<p><span class="emphasis"><em>Type:</em></span>
-boolean</p>
-
-<p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">true</code></p>
-
-<p><span class="emphasis"><em>Example:</em></span>
-<code class="literal">false</code></p>
-
-<p><span class="emphasis"><em>Declared by:</em></span></p>
-<table border="0" summary="Simple list" class="simplelist">
-<tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix" target="_top">
-&lt;home-manager/modules/programs/vscode.nix&gt;
-</a></code>
-</td></tr>
-</table>
-</dd>
-<dt>
- <span class="term">
- <a id="opt-programs.vscode.userSettings"></a><a class="term" href="options.xhtml#opt-programs.vscode.userSettings"><code class="option">programs.vscode.userSettings</code>
+ <a id="opt-programs.vscode.profiles._name_.userSettings"></a><a class="term" href="options.xhtml#opt-programs.vscode.profiles._name_.userSettings"><code class="option">programs.vscode.profiles.&lt;name&gt;.userSettings</code>
   </a>
  </span>
 </dt>
@@ -56895,7 +57156,7 @@ JSON value</p>
 </dd>
 <dt>
  <span class="term">
- <a id="opt-programs.vscode.userTasks"></a><a class="term" href="options.xhtml#opt-programs.vscode.userTasks"><code class="option">programs.vscode.userTasks</code>
+ <a id="opt-programs.vscode.profiles._name_.userTasks"></a><a class="term" href="options.xhtml#opt-programs.vscode.profiles._name_.userTasks"><code class="option">programs.vscode.profiles.&lt;name&gt;.userTasks</code>
   </a>
  </span>
 </dt>
@@ -57940,97 +58201,6 @@ null or string</p>
 <tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/wofi.nix" target="_top">
 &lt;home-manager/modules/programs/wofi.nix&gt;
-</a></code>
-</td></tr>
-</table>
-</dd>
-<dt>
- <span class="term">
- <a id="opt-programs.wpaperd.enable"></a><a class="term" href="options.xhtml#opt-programs.wpaperd.enable"><code class="option">programs.wpaperd.enable</code>
-  </a>
- </span>
-</dt>
-<dd>
-<p>Whether to enable wpaperd.</p>
-
-<p><span class="emphasis"><em>Type:</em></span>
-boolean</p>
-
-<p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">false</code></p>
-
-<p><span class="emphasis"><em>Example:</em></span>
-<code class="literal">true</code></p>
-
-<p><span class="emphasis"><em>Declared by:</em></span></p>
-<table border="0" summary="Simple list" class="simplelist">
-<tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/wpaperd.nix" target="_top">
-&lt;home-manager/modules/programs/wpaperd.nix&gt;
-</a></code>
-</td></tr>
-</table>
-</dd>
-<dt>
- <span class="term">
- <a id="opt-programs.wpaperd.package"></a><a class="term" href="options.xhtml#opt-programs.wpaperd.package"><code class="option">programs.wpaperd.package</code>
-  </a>
- </span>
-</dt>
-<dd>
-<p>The wpaperd package to use.</p>
-
-<p><span class="emphasis"><em>Type:</em></span>
-package</p>
-
-<p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">pkgs.wpaperd</code></p>
-
-<p><span class="emphasis"><em>Declared by:</em></span></p>
-<table border="0" summary="Simple list" class="simplelist">
-<tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/wpaperd.nix" target="_top">
-&lt;home-manager/modules/programs/wpaperd.nix&gt;
-</a></code>
-</td></tr>
-</table>
-</dd>
-<dt>
- <span class="term">
- <a id="opt-programs.wpaperd.settings"></a><a class="term" href="options.xhtml#opt-programs.wpaperd.settings"><code class="option">programs.wpaperd.settings</code>
-  </a>
- </span>
-</dt>
-<dd>
-<p>Configuration written to
-<code class="filename">$XDG_CONFIG_HOME/wpaperd/wallpaper.toml</code>.
-See <a class="link" href="https://github.com/danyspin97/wpaperd#wallpaper-configuration"  target="_top">https://github.com/danyspin97/wpaperd#wallpaper-configuration</a>
-for the full list of options.</p>
-
-<p><span class="emphasis"><em>Type:</em></span>
-TOML value</p>
-
-<p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">{ }</code></p>
-
-<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
-  eDP-1 = {
-    path = &quot;/home/foo/Pictures/Wallpaper&quot;;
-    apply-shadow = true;
-  };
-  DP-2 = {
-    path = &quot;/home/foo/Pictures/Anime&quot;;
-    sorting = &quot;descending&quot;;
-  };
-}
-
-</code></pre>
-
-<p><span class="emphasis"><em>Declared by:</em></span></p>
-<table border="0" summary="Simple list" class="simplelist">
-<tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/wpaperd.nix" target="_top">
-&lt;home-manager/modules/programs/wpaperd.nix&gt;
 </a></code>
 </td></tr>
 </table>
@@ -59713,6 +59883,30 @@ list of string</p>
 <dd>
 <p>Additional packages containing native messaging hosts that should be
 made available to Zen extensions.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">[ ]</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zen.nix" target="_top">
+&lt;home-manager/modules/programs/zen.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.zen.pkcs11Modules"></a><a class="term" href="options.xhtml#opt-programs.zen.pkcs11Modules"><code class="option">programs.zen.pkcs11Modules</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Additional packages to be loaded as PKCS #11 modules in Firefox.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 list of package</p>
@@ -66066,6 +66260,180 @@ null or string</p>
 <tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/clipmenu.nix" target="_top">
 &lt;home-manager/modules/services/clipmenu.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.clipse.enable"></a><a class="term" href="options.xhtml#opt-services.clipse.enable"><code class="option">services.clipse.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable Enable clipse clipboard manager.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/clipse.nix" target="_top">
+&lt;home-manager/modules/services/clipse.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.clipse.package"></a><a class="term" href="options.xhtml#opt-services.clipse.package"><code class="option">services.clipse.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The clipse package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.clipse</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/clipse.nix" target="_top">
+&lt;home-manager/modules/services/clipse.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.clipse.allowDuplicates"></a><a class="term" href="options.xhtml#opt-services.clipse.allowDuplicates"><code class="option">services.clipse.allowDuplicates</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Allow duplicates</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/clipse.nix" target="_top">
+&lt;home-manager/modules/services/clipse.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.clipse.historySize"></a><a class="term" href="options.xhtml#opt-services.clipse.historySize"><code class="option">services.clipse.historySize</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Number of history lines to keep.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+signed integer</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">100</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/clipse.nix" target="_top">
+&lt;home-manager/modules/services/clipse.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.clipse.systemdTarget"></a><a class="term" href="options.xhtml#opt-services.clipse.systemdTarget"><code class="option">services.clipse.systemdTarget</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The systemd target that will automatically start the clipse service.</p><p>When setting this value to <code class="literal">&quot;sway-session.target&quot;</code>,
+make sure to also enable <code class="option">wayland.windowManager.sway.systemd.enable</code>,
+otherwise the service may never be started.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">&quot;graphical-session.target&quot;</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">&quot;sway-session.target&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/clipse.nix" target="_top">
+&lt;home-manager/modules/services/clipse.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.clipse.theme"></a><a class="term" href="options.xhtml#opt-services.clipse.theme"><code class="option">services.clipse.theme</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to
+<code class="filename">$XDG_CONFIG_HOME/clipse/custom_theme.json</code>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting">{
+  useCustomTheme = false;
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  useCustomTheme = true;
+  DimmedDesc = &quot;#ffffff&quot;;
+  DimmedTitle = &quot;#ffffff&quot;;
+  FilteredMatch = &quot;#ffffff&quot;;
+  NormalDesc = &quot;#ffffff&quot;;
+  NormalTitle = &quot;#ffffff&quot;;
+  SelectedDesc = &quot;#ffffff&quot;;
+  SelectedTitle = &quot;#ffffff&quot;;
+  SelectedBorder = &quot;#ffffff&quot;;
+  SelectedDescBorder = &quot;#ffffff&quot;;
+  TitleFore = &quot;#ffffff&quot;;
+  Titleback = &quot;#434C5E&quot;;
+  StatusMsg = &quot;#ffffff&quot;;
+  PinIndicatorColor = &quot;#ff0000&quot;;
+};
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/clipse.nix" target="_top">
+&lt;home-manager/modules/services/clipse.nix&gt;
 </a></code>
 </td></tr>
 </table>
@@ -83213,6 +83581,97 @@ boolean</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-services.wpaperd.enable"></a><a class="term" href="options.xhtml#opt-services.wpaperd.enable"><code class="option">services.wpaperd.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable wpaperd.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/wpaperd.nix" target="_top">
+&lt;home-manager/modules/services/wpaperd.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.wpaperd.package"></a><a class="term" href="options.xhtml#opt-services.wpaperd.package"><code class="option">services.wpaperd.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The wpaperd package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.wpaperd</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/wpaperd.nix" target="_top">
+&lt;home-manager/modules/services/wpaperd.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.wpaperd.settings"></a><a class="term" href="options.xhtml#opt-services.wpaperd.settings"><code class="option">services.wpaperd.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to
+<code class="filename">$XDG_CONFIG_HOME/wpaperd/wallpaper.toml</code>.
+See <a class="link" href="https://github.com/danyspin97/wpaperd#wallpaper-configuration"  target="_top">https://github.com/danyspin97/wpaperd#wallpaper-configuration</a>
+for the full list of options.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+TOML value</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  eDP-1 = {
+    path = &quot;/home/foo/Pictures/Wallpaper&quot;;
+    apply-shadow = true;
+  };
+  DP-2 = {
+    path = &quot;/home/foo/Pictures/Anime&quot;;
+    sorting = &quot;descending&quot;;
+  };
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/wpaperd.nix" target="_top">
+&lt;home-manager/modules/services/wpaperd.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-services.xcape.enable"></a><a class="term" href="options.xhtml#opt-services.xcape.enable"><code class="option">services.xcape.enable</code>
   </a>
  </span>
@@ -86640,6 +87099,57 @@ attribute set of anything</p>
 <tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/keybindings.nix" target="_top">
 &lt;home-manager/modules/targets/darwin/keybindings.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-targets.darwin.linkApps.enable"></a><a class="term" href="options.xhtml#opt-targets.darwin.linkApps.enable"><code class="option">targets.darwin.linkApps.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable linking macOS applications to the user environment.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/linkapps.nix" target="_top">
+&lt;home-manager/modules/targets/darwin/linkapps.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-targets.darwin.linkApps.directory"></a><a class="term" href="options.xhtml#opt-targets.darwin.linkApps.directory"><code class="option">targets.darwin.linkApps.directory</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Path to link apps relative to the home directory.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">&quot;Applications/Home Manager Apps&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/targets/darwin/linkapps.nix" target="_top">
+&lt;home-manager/modules/targets/darwin/linkapps.nix&gt;
 </a></code>
 </td></tr>
 </table>
