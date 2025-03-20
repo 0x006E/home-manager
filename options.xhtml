@@ -21437,8 +21437,79 @@ string</p>
  </span>
 </dt>
 <dd>
-<p>Preloaded bookmarks. Note, this may silently overwrite any
-previously existing bookmarks!</p>
+<p>Declarative bookmarks.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+(submodule) or (list of anything) convertible to it</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/firefox.nix" target="_top">
+&lt;home-manager/modules/programs/firefox.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.firefox.profiles._name_.bookmarks.configFile"></a><a class="term" href="options.xhtml#opt-programs.firefox.profiles._name_.bookmarks.configFile"><code class="option">programs.firefox.profiles.&lt;name&gt;.bookmarks.configFile</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration file to define custom bookmarks.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or absolute path</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/firefox.nix" target="_top">
+&lt;home-manager/modules/programs/firefox.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.firefox.profiles._name_.bookmarks.force"></a><a class="term" href="options.xhtml#opt-programs.firefox.profiles._name_.bookmarks.force"><code class="option">programs.firefox.profiles.&lt;name&gt;.bookmarks.force</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to force override existing custom bookmarks.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/firefox.nix" target="_top">
+&lt;home-manager/modules/programs/firefox.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.firefox.profiles._name_.bookmarks.settings"></a><a class="term" href="options.xhtml#opt-programs.firefox.profiles._name_.bookmarks.settings"><code class="option">programs.firefox.profiles.&lt;name&gt;.bookmarks.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Custom bookmarks.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 (list of ((bookmark submodule) or (directory submodule))) or (attribute set of ((bookmark submodule) or (directory submodule))) convertible to it</p>
@@ -22038,7 +22109,7 @@ null or string</p>
 <code class="literal">null</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span>
-<code class="literal">&quot;DuckDuckGo&quot;</code></p>
+<code class="literal">&quot;ddg&quot;</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -22058,7 +22129,7 @@ null or string</p>
 <dd>
 <p>Attribute set of search engine configurations. Engines that
 only have <code class="varname">metaData</code> specified will be treated as builtin
-to Firefox.</p><p>See <a class="link" href="https://searchfox.org/mozilla-central/rev/669329e284f8e8e2bb28090617192ca9b4ef3380/toolkit/components/search/SearchEngine.jsm#1138-1177"  target="_top">SearchEngine.jsm</a>
+to Firefox.</p><p>See <a class="link" href="https://searchfox.org/mozilla-central/rev/e3f42ec9320748b2aab3d474d1e47075def9000c/toolkit/components/search/SearchEngine.sys.mjs#890-923"  target="_top">SearchEngine.jsm</a>
 in Firefox’s source for available options. We maintain a
 mapping to let you specify all options in the referenced link
 without underscores, but it may fall out of date with future
@@ -22072,7 +22143,8 @@ attribute set of attribute set of (JSON value)</p>
 <code class="literal">{ }</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
-  &quot;Nix Packages&quot; = {
+  nix-packages = {
+    name = &quot;Nix Packages&quot;;
     urls = [{
       template = &quot;https://search.nixos.org/packages&quot;;
       params = [
@@ -22085,15 +22157,15 @@ attribute set of attribute set of (JSON value)</p>
     definedAliases = [ &quot;@np&quot; ];
   };
 
-  &quot;NixOS Wiki&quot; = {
-    urls = [{ template = &quot;https://wiki.nixos.org/index.php?search={searchTerms}&quot;; }];
-    iconUpdateURL = &quot;https://wiki.nixos.org/favicon.png&quot;;
-    updateInterval = 24 * 60 * 60 * 1000; # every day
+  nixos-wiki = {
+    name = &quot;NixOS Wiki&quot;;
+    urls = [{ template = &quot;https://wiki.nixos.org/w/index.php?search={searchTerms}&quot;; }];
+    iconMapObj.&quot;16&quot; = &quot;https://wiki.nixos.org/favicon.ico&quot;;
     definedAliases = [ &quot;@nw&quot; ];
   };
 
-  &quot;Bing&quot;.metaData.hidden = true;
-  &quot;Google&quot;.metaData.alias = &quot;@g&quot;; # builtin engines only support specifying one additional alias
+  bing.metaData.hidden = true;
+  google.metaData.alias = &quot;@g&quot;; # builtin engines only support specifying one additional alias
 }
 
 </code></pre>
@@ -22153,8 +22225,8 @@ list of string</p>
 <code class="literal">[ ]</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">[
-  &quot;DuckDuckGo&quot;
-  &quot;Google&quot;
+  &quot;ddg&quot;
+  &quot;google&quot;
 ]
 </code></pre>
 
@@ -22183,7 +22255,7 @@ null or string</p>
 <code class="literal">null</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span>
-<code class="literal">&quot;DuckDuckGo&quot;</code></p>
+<code class="literal">&quot;ddg&quot;</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -22996,8 +23068,79 @@ string</p>
  </span>
 </dt>
 <dd>
-<p>Preloaded bookmarks. Note, this may silently overwrite any
-previously existing bookmarks!</p>
+<p>Declarative bookmarks.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+(submodule) or (list of anything) convertible to it</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/floorp.nix" target="_top">
+&lt;home-manager/modules/programs/floorp.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.floorp.profiles._name_.bookmarks.configFile"></a><a class="term" href="options.xhtml#opt-programs.floorp.profiles._name_.bookmarks.configFile"><code class="option">programs.floorp.profiles.&lt;name&gt;.bookmarks.configFile</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration file to define custom bookmarks.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or absolute path</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/floorp.nix" target="_top">
+&lt;home-manager/modules/programs/floorp.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.floorp.profiles._name_.bookmarks.force"></a><a class="term" href="options.xhtml#opt-programs.floorp.profiles._name_.bookmarks.force"><code class="option">programs.floorp.profiles.&lt;name&gt;.bookmarks.force</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to force override existing custom bookmarks.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/floorp.nix" target="_top">
+&lt;home-manager/modules/programs/floorp.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.floorp.profiles._name_.bookmarks.settings"></a><a class="term" href="options.xhtml#opt-programs.floorp.profiles._name_.bookmarks.settings"><code class="option">programs.floorp.profiles.&lt;name&gt;.bookmarks.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Custom bookmarks.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 (list of ((bookmark submodule) or (directory submodule))) or (attribute set of ((bookmark submodule) or (directory submodule))) convertible to it</p>
@@ -23597,7 +23740,7 @@ null or string</p>
 <code class="literal">null</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span>
-<code class="literal">&quot;DuckDuckGo&quot;</code></p>
+<code class="literal">&quot;ddg&quot;</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -23617,7 +23760,7 @@ null or string</p>
 <dd>
 <p>Attribute set of search engine configurations. Engines that
 only have <code class="varname">metaData</code> specified will be treated as builtin
-to Floorp.</p><p>See <a class="link" href="https://searchfox.org/mozilla-central/rev/669329e284f8e8e2bb28090617192ca9b4ef3380/toolkit/components/search/SearchEngine.jsm#1138-1177"  target="_top">SearchEngine.jsm</a>
+to Floorp.</p><p>See <a class="link" href="https://searchfox.org/mozilla-central/rev/e3f42ec9320748b2aab3d474d1e47075def9000c/toolkit/components/search/SearchEngine.sys.mjs#890-923"  target="_top">SearchEngine.jsm</a>
 in Floorp’s source for available options. We maintain a
 mapping to let you specify all options in the referenced link
 without underscores, but it may fall out of date with future
@@ -23631,7 +23774,8 @@ attribute set of attribute set of (JSON value)</p>
 <code class="literal">{ }</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
-  &quot;Nix Packages&quot; = {
+  nix-packages = {
+    name = &quot;Nix Packages&quot;;
     urls = [{
       template = &quot;https://search.nixos.org/packages&quot;;
       params = [
@@ -23644,15 +23788,15 @@ attribute set of attribute set of (JSON value)</p>
     definedAliases = [ &quot;@np&quot; ];
   };
 
-  &quot;NixOS Wiki&quot; = {
-    urls = [{ template = &quot;https://wiki.nixos.org/index.php?search={searchTerms}&quot;; }];
-    iconUpdateURL = &quot;https://wiki.nixos.org/favicon.png&quot;;
-    updateInterval = 24 * 60 * 60 * 1000; # every day
+  nixos-wiki = {
+    name = &quot;NixOS Wiki&quot;;
+    urls = [{ template = &quot;https://wiki.nixos.org/w/index.php?search={searchTerms}&quot;; }];
+    iconMapObj.&quot;16&quot; = &quot;https://wiki.nixos.org/favicon.ico&quot;;
     definedAliases = [ &quot;@nw&quot; ];
   };
 
-  &quot;Bing&quot;.metaData.hidden = true;
-  &quot;Google&quot;.metaData.alias = &quot;@g&quot;; # builtin engines only support specifying one additional alias
+  bing.metaData.hidden = true;
+  google.metaData.alias = &quot;@g&quot;; # builtin engines only support specifying one additional alias
 }
 
 </code></pre>
@@ -23712,8 +23856,8 @@ list of string</p>
 <code class="literal">[ ]</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">[
-  &quot;DuckDuckGo&quot;
-  &quot;Google&quot;
+  &quot;ddg&quot;
+  &quot;google&quot;
 ]
 </code></pre>
 
@@ -23742,7 +23886,7 @@ null or string</p>
 <code class="literal">null</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span>
-<code class="literal">&quot;DuckDuckGo&quot;</code></p>
+<code class="literal">&quot;ddg&quot;</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -47076,6 +47220,204 @@ null or package</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.rclone.enable"></a><a class="term" href="options.xhtml#opt-programs.rclone.enable"><code class="option">programs.rclone.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable rclone.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rclone.nix" target="_top">
+&lt;home-manager/modules/programs/rclone.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.rclone.package"></a><a class="term" href="options.xhtml#opt-programs.rclone.package"><code class="option">programs.rclone.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The rclone package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.rclone</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rclone.nix" target="_top">
+&lt;home-manager/modules/programs/rclone.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.rclone.remotes"></a><a class="term" href="options.xhtml#opt-programs.rclone.remotes"><code class="option">programs.rclone.remotes</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>An attribute set of remote configurations. Each remote consists of regular
+configuration options and optional secrets.</p><p>See <a class="link" href="https://rclone.org/docs/"  target="_top">https://rclone.org/docs/</a> for more information on configuring specific
+remotes.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (submodule)</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  b2 = {
+    config = {
+      type = &quot;b2&quot;;
+      hard_delete = true;
+    };
+    secrets = {
+      # using sops
+      account = config.sops.secrets.b2-acc-id.path;
+      # using agenix
+      key = config.age.secrets.b2-key.path;
+    };
+  };
+
+  server.config = {
+    type = &quot;sftp&quot;;
+    host = &quot;server&quot;;
+    user = &quot;backup&quot;;
+    key_file = &quot;${home.homeDirectory}/.ssh/id_ed25519&quot;;
+  };
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rclone.nix" target="_top">
+&lt;home-manager/modules/programs/rclone.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.rclone.remotes._name_.config"></a><a class="term" href="options.xhtml#opt-programs.rclone.remotes._name_.config"><code class="option">programs.rclone.remotes.&lt;name&gt;.config</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Regular configuration options as described in rclone’s documentation
+<a class="link" href="https://rclone.org/docs/"  target="_top">https://rclone.org/docs/</a>. When specifying options follow the formatting
+process outlined here <a class="link" href="https://rclone.org/docs/#config-config-file"  target="_top">https://rclone.org/docs/#config-config-file</a>, namley:</p><div class="itemizedlist"><ul class="itemizedlist " style="list-style-type: disc;"><li class="listitem"><p>Remove the leading double-dash (–) from the rclone option name</p></li><li class="listitem"><p>Replace hyphens (-) with underscores (_)</p></li><li class="listitem"><p>Convert to lowercase</p></li><li class="listitem"><p>Use the resulting string as your configuration key</p></li></ul></div><p>For example, the rclone option “–mega-hard-delete” would use “hard_delete”
+as the config key.</p><p>Security Note: Always use the <code class="option">secrets</code> option for sensitive data
+instead of the <code class="option">config</code> option to prevent exposing credentials to
+the world-readable Nix store.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (null or boolean or signed integer or floating point number or string)</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  type = &quot;mega&quot;; # Required - specifies the remote type
+  user = &quot;you@example.com&quot;;
+  hard_delete = true;
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rclone.nix" target="_top">
+&lt;home-manager/modules/programs/rclone.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.rclone.remotes._name_.secrets"></a><a class="term" href="options.xhtml#opt-programs.rclone.remotes._name_.secrets"><code class="option">programs.rclone.remotes.&lt;name&gt;.secrets</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Sensitive configuration values such as passwords, API keys, and tokens. These
+must be provided as file paths to the secrets, which will be read at activation
+time.</p><p>Note: If using secret management solutions like agenix or sops-nix with
+home-manager, you need to ensure their services are activated before switching
+to this home-manager generation. Consider setting
+<code class="option">systemd.user.startServices</code> to <code class="literal">&quot;sd-switch&quot;</code> for automatic service
+startup.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  password = &quot;/run/secrets/password&quot;;
+  api_key = config.age.secrets.api-key.path;
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rclone.nix" target="_top">
+&lt;home-manager/modules/programs/rclone.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.rclone.writeAfter"></a><a class="term" href="options.xhtml#opt-programs.rclone.writeAfter"><code class="option">programs.rclone.writeAfter</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Controls when the rclone configuration is written during Home Manager activation.
+You should not need to change this unless you have very specific activation order
+requirements.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">&quot;reloadSystemd&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rclone.nix" target="_top">
+&lt;home-manager/modules/programs/rclone.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.readline.enable"></a><a class="term" href="options.xhtml#opt-programs.readline.enable"><code class="option">programs.readline.enable</code>
   </a>
  </span>
@@ -53820,6 +54162,95 @@ null or boolean</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.tex-fmt.enable"></a><a class="term" href="options.xhtml#opt-programs.tex-fmt.enable"><code class="option">programs.tex-fmt.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable tex-fmt.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/tex-fmt.nix" target="_top">
+&lt;home-manager/modules/programs/tex-fmt.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.tex-fmt.package"></a><a class="term" href="options.xhtml#opt-programs.tex-fmt.package"><code class="option">programs.tex-fmt.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The tex-fmt package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.tex-fmt</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/tex-fmt.nix" target="_top">
+&lt;home-manager/modules/programs/tex-fmt.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.tex-fmt.settings"></a><a class="term" href="options.xhtml#opt-programs.tex-fmt.settings"><code class="option">programs.tex-fmt.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to
+<code class="filename">$XDG_CONFIG_HOME/tex-fmt/tex-fmt.toml</code> on Linux or
+<code class="filename">$HOME/Library/Application Support/tex-fmt/tex-fmt.toml</code> on Darwin.
+See <a class="link" href="https://github.com/WGUNDERWOOD/tex-fmt"  target="_top">https://github.com/WGUNDERWOOD/tex-fmt</a> and
+<a class="link" href="https://github.com/WGUNDERWOOD/tex-fmt/blob/master/tex-fmt.toml"  target="_top">https://github.com/WGUNDERWOOD/tex-fmt/blob/master/tex-fmt.toml</a>
+for more information.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+TOML value</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  wrap = true;
+  tabsize = 2;
+  tabchar = &quot;space&quot;;
+  lists = [];
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/tex-fmt.nix" target="_top">
+&lt;home-manager/modules/programs/tex-fmt.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.texlive.enable"></a><a class="term" href="options.xhtml#opt-programs.texlive.enable"><code class="option">programs.texlive.enable</code>
   </a>
  </span>
@@ -54405,7 +54836,7 @@ null or string</p>
 <code class="literal">null</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span>
-<code class="literal">&quot;DuckDuckGo&quot;</code></p>
+<code class="literal">&quot;ddg&quot;</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -54425,7 +54856,7 @@ null or string</p>
 <dd>
 <p>Attribute set of search engine configurations. Engines that
 only have <code class="varname">metaData</code> specified will be treated as builtin
-to Thunderbird.</p><p>See <a class="link" href="https://searchfox.org/mozilla-central/rev/669329e284f8e8e2bb28090617192ca9b4ef3380/toolkit/components/search/SearchEngine.jsm#1138-1177"  target="_top">SearchEngine.jsm</a>
+to Thunderbird.</p><p>See <a class="link" href="https://searchfox.org/mozilla-central/rev/e3f42ec9320748b2aab3d474d1e47075def9000c/toolkit/components/search/SearchEngine.sys.mjs#890-923"  target="_top">SearchEngine.jsm</a>
 in Thunderbird’s source for available options. We maintain a
 mapping to let you specify all options in the referenced link
 without underscores, but it may fall out of date with future
@@ -54439,7 +54870,8 @@ attribute set of attribute set of (JSON value)</p>
 <code class="literal">{ }</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
-  &quot;Nix Packages&quot; = {
+  nix-packages = {
+    name = &quot;Nix Packages&quot;;
     urls = [{
       template = &quot;https://search.nixos.org/packages&quot;;
       params = [
@@ -54452,15 +54884,15 @@ attribute set of attribute set of (JSON value)</p>
     definedAliases = [ &quot;@np&quot; ];
   };
 
-  &quot;NixOS Wiki&quot; = {
-    urls = [{ template = &quot;https://wiki.nixos.org/index.php?search={searchTerms}&quot;; }];
-    iconUpdateURL = &quot;https://wiki.nixos.org/favicon.png&quot;;
-    updateInterval = 24 * 60 * 60 * 1000; # every day
+  nixos-wiki = {
+    name = &quot;NixOS Wiki&quot;;
+    urls = [{ template = &quot;https://wiki.nixos.org/w/index.php?search={searchTerms}&quot;; }];
+    iconMapObj.&quot;16&quot; = &quot;https://wiki.nixos.org/favicon.ico&quot;;
     definedAliases = [ &quot;@nw&quot; ];
   };
 
-  &quot;Bing&quot;.metaData.hidden = true;
-  &quot;Google&quot;.metaData.alias = &quot;@g&quot;; # builtin engines only support specifying one additional alias
+  bing.metaData.hidden = true;
+  google.metaData.alias = &quot;@g&quot;; # builtin engines only support specifying one additional alias
 }
 
 </code></pre>
@@ -54520,8 +54952,8 @@ list of string</p>
 <code class="literal">[ ]</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">[
-  &quot;DuckDuckGo&quot;
-  &quot;Google&quot;
+  &quot;ddg&quot;
+  &quot;google&quot;
 ]
 </code></pre>
 
@@ -54550,7 +54982,7 @@ null or string</p>
 <code class="literal">null</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span>
-<code class="literal">&quot;DuckDuckGo&quot;</code></p>
+<code class="literal">&quot;ddg&quot;</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -58162,6 +58594,92 @@ null or string</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.waylogout.enable"></a><a class="term" href="options.xhtml#opt-programs.waylogout.enable"><code class="option">programs.waylogout.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether or not to enable waylogout.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/waylogout.nix" target="_top">
+&lt;home-manager/modules/programs/waylogout.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.waylogout.package"></a><a class="term" href="options.xhtml#opt-programs.waylogout.package"><code class="option">programs.waylogout.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The waylogout package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.waylogout</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/waylogout.nix" target="_top">
+&lt;home-manager/modules/programs/waylogout.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.waylogout.settings"></a><a class="term" href="options.xhtml#opt-programs.waylogout.settings"><code class="option">programs.waylogout.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Default arguments to <span class="command"><strong>waylogout</strong></span>. An empty set
+disables configuration generation.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (boolean or floating point number or signed integer or absolute path or string)</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  color = &quot;808080&quot;;
+  effect-blur = &quot;7x4&quot;;
+  poweroff-command = &quot;systemctl poweroff&quot;;
+  reboot-command = &quot;systemctl reboot&quot;;
+  scaling = &quot;fit&quot;;
+  screenshots = true;
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/waylogout.nix" target="_top">
+&lt;home-manager/modules/programs/waylogout.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.wezterm.enable"></a><a class="term" href="options.xhtml#opt-programs.wezterm.enable"><code class="option">programs.wezterm.enable</code>
   </a>
  </span>
@@ -60597,8 +61115,79 @@ string</p>
  </span>
 </dt>
 <dd>
-<p>Preloaded bookmarks. Note, this may silently overwrite any
-previously existing bookmarks!</p>
+<p>Declarative bookmarks.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+(submodule) or (list of anything) convertible to it</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zen.nix" target="_top">
+&lt;home-manager/modules/programs/zen.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.zen.profiles._name_.bookmarks.configFile"></a><a class="term" href="options.xhtml#opt-programs.zen.profiles._name_.bookmarks.configFile"><code class="option">programs.zen.profiles.&lt;name&gt;.bookmarks.configFile</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration file to define custom bookmarks.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or absolute path</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zen.nix" target="_top">
+&lt;home-manager/modules/programs/zen.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.zen.profiles._name_.bookmarks.force"></a><a class="term" href="options.xhtml#opt-programs.zen.profiles._name_.bookmarks.force"><code class="option">programs.zen.profiles.&lt;name&gt;.bookmarks.force</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to force override existing custom bookmarks.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zen.nix" target="_top">
+&lt;home-manager/modules/programs/zen.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.zen.profiles._name_.bookmarks.settings"></a><a class="term" href="options.xhtml#opt-programs.zen.profiles._name_.bookmarks.settings"><code class="option">programs.zen.profiles.&lt;name&gt;.bookmarks.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Custom bookmarks.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 (list of ((bookmark submodule) or (directory submodule))) or (attribute set of ((bookmark submodule) or (directory submodule))) convertible to it</p>
@@ -61198,7 +61787,7 @@ null or string</p>
 <code class="literal">null</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span>
-<code class="literal">&quot;DuckDuckGo&quot;</code></p>
+<code class="literal">&quot;ddg&quot;</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -61218,7 +61807,7 @@ null or string</p>
 <dd>
 <p>Attribute set of search engine configurations. Engines that
 only have <code class="varname">metaData</code> specified will be treated as builtin
-to Zen.</p><p>See <a class="link" href="https://searchfox.org/mozilla-central/rev/669329e284f8e8e2bb28090617192ca9b4ef3380/toolkit/components/search/SearchEngine.jsm#1138-1177"  target="_top">SearchEngine.jsm</a>
+to Zen.</p><p>See <a class="link" href="https://searchfox.org/mozilla-central/rev/e3f42ec9320748b2aab3d474d1e47075def9000c/toolkit/components/search/SearchEngine.sys.mjs#890-923"  target="_top">SearchEngine.jsm</a>
 in Zen’s source for available options. We maintain a
 mapping to let you specify all options in the referenced link
 without underscores, but it may fall out of date with future
@@ -61232,7 +61821,8 @@ attribute set of attribute set of (JSON value)</p>
 <code class="literal">{ }</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
-  &quot;Nix Packages&quot; = {
+  nix-packages = {
+    name = &quot;Nix Packages&quot;;
     urls = [{
       template = &quot;https://search.nixos.org/packages&quot;;
       params = [
@@ -61245,15 +61835,15 @@ attribute set of attribute set of (JSON value)</p>
     definedAliases = [ &quot;@np&quot; ];
   };
 
-  &quot;NixOS Wiki&quot; = {
-    urls = [{ template = &quot;https://wiki.nixos.org/index.php?search={searchTerms}&quot;; }];
-    iconUpdateURL = &quot;https://wiki.nixos.org/favicon.png&quot;;
-    updateInterval = 24 * 60 * 60 * 1000; # every day
+  nixos-wiki = {
+    name = &quot;NixOS Wiki&quot;;
+    urls = [{ template = &quot;https://wiki.nixos.org/w/index.php?search={searchTerms}&quot;; }];
+    iconMapObj.&quot;16&quot; = &quot;https://wiki.nixos.org/favicon.ico&quot;;
     definedAliases = [ &quot;@nw&quot; ];
   };
 
-  &quot;Bing&quot;.metaData.hidden = true;
-  &quot;Google&quot;.metaData.alias = &quot;@g&quot;; # builtin engines only support specifying one additional alias
+  bing.metaData.hidden = true;
+  google.metaData.alias = &quot;@g&quot;; # builtin engines only support specifying one additional alias
 }
 
 </code></pre>
@@ -61313,8 +61903,8 @@ list of string</p>
 <code class="literal">[ ]</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">[
-  &quot;DuckDuckGo&quot;
-  &quot;Google&quot;
+  &quot;ddg&quot;
+  &quot;google&quot;
 ]
 </code></pre>
 
@@ -61343,7 +61933,7 @@ null or string</p>
 <code class="literal">null</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span>
-<code class="literal">&quot;DuckDuckGo&quot;</code></p>
+<code class="literal">&quot;ddg&quot;</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -68201,6 +68791,58 @@ package</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">pkgs.easyeffects</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/easyeffects.nix" target="_top">
+&lt;home-manager/modules/services/easyeffects.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.easyeffects.extraPresets"></a><a class="term" href="options.xhtml#opt-services.easyeffects.extraPresets"><code class="option">services.easyeffects.extraPresets</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>List of presets to import to easyeffects.
+Presets are written to input and output folder in <code class="literal">$XDG_CONFIG_HOME/easyeffects</code>.
+Top level block (input/output) determines the folder the file is written to.</p><p>See community presets at:
+https://github.com/wwmm/easyeffects/wiki/Community-Presets</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or (attribute set of EasyEffects input or output JSON preset)</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  my-preset = {
+    input = {
+      blocklist = [
+
+      ];
+      &quot;plugins_order&quot; = [
+        &quot;rnnoise#0&quot;
+      ];
+      &quot;rnnoise#0&quot; = {
+        bypass = false;
+        &quot;enable-vad&quot; = false;
+        &quot;input-gain&quot; = 0.0;
+        &quot;model-path&quot; = &quot;&quot;;
+        &quot;output-gain&quot; = 0.0;
+        release = 20.0;
+        &quot;vad-thres&quot; = 50.0;
+        wet = 0.0;
+      };
+    };
+  };
+};
+
+</code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
