@@ -28994,6 +28994,30 @@ boolean</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.granted.package"></a><a class="term" href="options.xhtml#opt-programs.granted.package"><code class="option">programs.granted.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The granted package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.granted</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/granted.nix" target="_top">
+&lt;home-manager/modules/programs/granted.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.havoc.enable"></a><a class="term" href="options.xhtml#opt-programs.havoc.enable"><code class="option">programs.havoc.enable</code>
   </a>
  </span>
@@ -39000,7 +39024,7 @@ boolean</p>
 package</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">&lt;derivation mpv-with-scripts-0.39.0&gt;</code></p>
+<code class="literal">&lt;derivation mpv-with-scripts-0.40.0&gt;</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span>
 <code class="literal">pkgs.mpv-unwrapped.wrapper { mpv = pkgs.mpv-unwrapped.override { vapoursynthSupport = true; }; youtubeSupport = true; }</code></p>
@@ -41580,6 +41604,30 @@ boolean</p>
 
 <p><span class="emphasis"><em>Example:</em></span>
 <code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/newsboat.nix" target="_top">
+&lt;home-manager/modules/programs/newsboat.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.newsboat.package"></a><a class="term" href="options.xhtml#opt-programs.newsboat.package"><code class="option">programs.newsboat.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The newsboat package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.newsboat</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -96029,6 +96077,34 @@ list of absolute path</p>
 ]
 
 </code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg-autostart.nix" target="_top">
+&lt;home-manager/modules/misc/xdg-autostart.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-xdg.autostart.readOnly"></a><a class="term" href="options.xhtml#opt-xdg.autostart.readOnly"><code class="option">xdg.autostart.readOnly</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Make <code class="literal">XDG_CONFIG_HOME/autostart</code> a symlink to a readonly directory so that
+programs cannot install arbitrary autostart services.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
