@@ -32642,6 +32642,7 @@ submodule</p>
   false = &quot;0;37&quot;;
   null = &quot;1;30&quot;;
   numbers = &quot;0;37&quot;;
+  objectKeys = &quot;1;34&quot;;
   objects = &quot;1;37&quot;;
   strings = &quot;0;32&quot;;
   true = &quot;0;37&quot;;
@@ -32649,13 +32650,14 @@ submodule</p>
 </code></pre>
 
 <p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
-  null    = &quot;1;30&quot;;
-  false   = &quot;0;31&quot;;
-  true    = &quot;0;32&quot;;
-  numbers = &quot;0;36&quot;;
-  strings = &quot;0;33&quot;;
-  arrays  = &quot;1;35&quot;;
-  objects = &quot;1;37&quot;;
+  null       = &quot;1;30&quot;;
+  false      = &quot;0;31&quot;;
+  true       = &quot;0;32&quot;;
+  numbers    = &quot;0;36&quot;;
+  strings    = &quot;0;33&quot;;
+  arrays     = &quot;1;35&quot;;
+  objects    = &quot;1;37&quot;;
+  objectKeys = &quot;1;34&quot;;
 }
 
 </code></pre>
@@ -45053,6 +45055,38 @@ package</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">pkgs.pay-respects</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/pay-respects.nix" target="_top">
+&lt;home-manager/modules/programs/pay-respects.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.pay-respects.options"></a><a class="term" href="options.xhtml#opt-programs.pay-respects.options"><code class="option">programs.pay-respects.options</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>List of options to pass to pay-respects &lt;shell&gt;.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting">[
+  &quot;--alias&quot;
+]
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">[
+  &quot;--alias&quot;
+  &quot;f&quot;
+]
+</code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
