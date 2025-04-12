@@ -19,6 +19,12 @@
     github = "9p4";
     githubId = 17993169;
   };
+  _0x006e = {
+    name = "Nithin S Varrier";
+    email = "me@ntsv.dev";
+    github = "0x006e";
+    githubId = 14817339;
+  };
   aabccd021 = {
     name = "Muhamad Abdurahman";
     email = "aabccd021@gmail.com";
