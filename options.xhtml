@@ -9330,6 +9330,30 @@ list of package</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-i18n.inputMethod.fcitx5.classicUiConfig"></a><a class="term" href="options.xhtml#opt-i18n.inputMethod.fcitx5.classicUiConfig"><code class="option">i18n.inputMethod.fcitx5.classicUiConfig</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration to be written to <code class="filename">$XDG_DATA_HOME/fcitx5/conf/classicui.conf</code></p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or strings concatenated with “\n”</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">&quot;&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/i18n/input-method/fcitx5.nix" target="_top">
+&lt;home-manager/modules/i18n/input-method/fcitx5.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-i18n.inputMethod.fcitx5.fcitx5-with-addons"></a><a class="term" href="options.xhtml#opt-i18n.inputMethod.fcitx5.fcitx5-with-addons"><code class="option">i18n.inputMethod.fcitx5.fcitx5-with-addons</code>
   </a>
  </span>
@@ -9345,6 +9369,106 @@ package</p>
 
 <p><span class="emphasis"><em>Example:</em></span>
 <code class="literal">pkgs.kdePackages.fcitx5-with-addons</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/i18n/input-method/fcitx5.nix" target="_top">
+&lt;home-manager/modules/i18n/input-method/fcitx5.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-i18n.inputMethod.fcitx5.themes"></a><a class="term" href="options.xhtml#opt-i18n.inputMethod.fcitx5.themes"><code class="option">i18n.inputMethod.fcitx5.themes</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Themes to be written to <code class="filename">$XDG_DATA_HOME/fcitx5/themes/${name}</code></p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+lazy attribute set of (submodule)</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">&quot;&quot;</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/i18n/input-method/fcitx5.nix" target="_top">
+&lt;home-manager/modules/i18n/input-method/fcitx5.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-i18n.inputMethod.fcitx5.themes._name_.highlightImage"></a><a class="term" href="options.xhtml#opt-i18n.inputMethod.fcitx5.themes._name_.highlightImage"><code class="option">i18n.inputMethod.fcitx5.themes.&lt;name&gt;.highlightImage</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Path to the SVG of the highlight.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or absolute path</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/i18n/input-method/fcitx5.nix" target="_top">
+&lt;home-manager/modules/i18n/input-method/fcitx5.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-i18n.inputMethod.fcitx5.themes._name_.panelImage"></a><a class="term" href="options.xhtml#opt-i18n.inputMethod.fcitx5.themes._name_.panelImage"><code class="option">i18n.inputMethod.fcitx5.themes.&lt;name&gt;.panelImage</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Path to the SVG of the panel.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or absolute path</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/i18n/input-method/fcitx5.nix" target="_top">
+&lt;home-manager/modules/i18n/input-method/fcitx5.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-i18n.inputMethod.fcitx5.themes._name_.theme"></a><a class="term" href="options.xhtml#opt-i18n.inputMethod.fcitx5.themes._name_.theme"><code class="option">i18n.inputMethod.fcitx5.themes.&lt;name&gt;.theme</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The <code class="literal">theme.conf</code> file of the theme.</p><p>See https://fcitx-im.org/wiki/Fcitx_5_Theme#Background_images
+for more information.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or strings concatenated with “\n” or absolute path</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -23628,14 +23752,13 @@ attribute set of (Firefox preference (int, bool, string, and also attrs, list, f
  </span>
 </dt>
 <dd>
-<p>Custom Firefox user chrome CSS.</p><p>This can be a path to a file or directory in the Nix store,
-or a derivation, or a verbatim multi-line string.</p>
+<p>Custom Firefox user chrome CSS.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-null or strings concatenated with “\n” or absolute path</p>
+strings concatenated with “\n” or absolute path</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">null</code></p>
+<code class="literal">&quot;&quot;</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">&#x27;&#x27;
   /* Hide tab bar in FF Quantum */
@@ -25260,14 +25383,13 @@ attribute set of (Floorp preference (int, bool, string, and also attrs, list, fl
  </span>
 </dt>
 <dd>
-<p>Custom Floorp user chrome CSS.</p><p>This can be a path to a file or directory in the Nix store,
-or a derivation, or a verbatim multi-line string.</p>
+<p>Custom Floorp user chrome CSS.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-null or strings concatenated with “\n” or absolute path</p>
+strings concatenated with “\n” or absolute path</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">null</code></p>
+<code class="literal">&quot;&quot;</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">&#x27;&#x27;
   /* Hide tab bar in FF Quantum */
@@ -66439,14 +66561,13 @@ attribute set of (Zen preference (int, bool, string, and also attrs, list, float
  </span>
 </dt>
 <dd>
-<p>Custom Zen user chrome CSS.</p><p>This can be a path to a file or directory in the Nix store,
-or a derivation, or a verbatim multi-line string.</p>
+<p>Custom Zen user chrome CSS.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-null or strings concatenated with “\n” or absolute path</p>
+strings concatenated with “\n” or absolute path</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">null</code></p>
+<code class="literal">&quot;&quot;</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">&#x27;&#x27;
   /* Hide tab bar in FF Quantum */
@@ -67732,7 +67853,7 @@ The default of <code class="literal">^[[A</code> may correspond to the UP key �
  </span>
 </dt>
 <dd>
-<p>Content to be added to <code class="filename">.zshrc</code>. To specify the order, use <code class="literal">lib.mkOrder</code>.</p>
+<p>Content to be added to <code class="filename">.zshrc</code>.</p><p>To specify the order, use <code class="literal">lib.mkOrder</code>.</p><p>Common order values:</p><div class="itemizedlist"><ul class="itemizedlist " style="list-style-type: disc;"><li class="listitem"><p>500 (mkBefore): Early initialization (replaces initExtraFirst)</p></li><li class="listitem"><p>550: Before completion initialization (replaces initExtraBeforeCompInit)</p></li><li class="listitem"><p>1000 (default): General configuration (replaces initExtra)</p></li><li class="listitem"><p>1500 (mkAfter): Last to run configuration</p></li></ul></div>
 
 <p><span class="emphasis"><em>Type:</em></span>
 strings concatenated with “\n”</p>
@@ -67740,83 +67861,11 @@ strings concatenated with “\n”</p>
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">&quot;&quot;</code></p>
 
-<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">lib.mkOrder 1000 &#x27;&#x27;&#x27;
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">lib.mkOrder 1200 &#x27;&#x27;&#x27;
   echo &quot;Hello zsh initContent!&quot;
 &#x27;&#x27;&#x27;;
 
 </code></pre>
-
-<p><span class="emphasis"><em>Declared by:</em></span></p>
-<table border="0" summary="Simple list" class="simplelist">
-<tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zsh.nix" target="_top">
-&lt;home-manager/modules/programs/zsh.nix&gt;
-</a></code>
-</td></tr>
-</table>
-</dd>
-<dt>
- <span class="term">
- <a id="opt-programs.zsh.initExtra"></a><a class="term" href="options.xhtml#opt-programs.zsh.initExtra"><code class="option">programs.zsh.initExtra</code>
-  </a>
- </span>
-</dt>
-<dd>
-<p>Extra commands that should be added to <code class="filename">.zshrc</code>.</p>
-
-<p><span class="emphasis"><em>Type:</em></span>
-strings concatenated with “\n”</p>
-
-<p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">&quot;&quot;</code></p>
-
-<p><span class="emphasis"><em>Declared by:</em></span></p>
-<table border="0" summary="Simple list" class="simplelist">
-<tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zsh.nix" target="_top">
-&lt;home-manager/modules/programs/zsh.nix&gt;
-</a></code>
-</td></tr>
-</table>
-</dd>
-<dt>
- <span class="term">
- <a id="opt-programs.zsh.initExtraBeforeCompInit"></a><a class="term" href="options.xhtml#opt-programs.zsh.initExtraBeforeCompInit"><code class="option">programs.zsh.initExtraBeforeCompInit</code>
-  </a>
- </span>
-</dt>
-<dd>
-<p>Extra commands that should be added to <code class="filename">.zshrc</code> before compinit.</p>
-
-<p><span class="emphasis"><em>Type:</em></span>
-strings concatenated with “\n”</p>
-
-<p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">&quot;&quot;</code></p>
-
-<p><span class="emphasis"><em>Declared by:</em></span></p>
-<table border="0" summary="Simple list" class="simplelist">
-<tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zsh.nix" target="_top">
-&lt;home-manager/modules/programs/zsh.nix&gt;
-</a></code>
-</td></tr>
-</table>
-</dd>
-<dt>
- <span class="term">
- <a id="opt-programs.zsh.initExtraFirst"></a><a class="term" href="options.xhtml#opt-programs.zsh.initExtraFirst"><code class="option">programs.zsh.initExtraFirst</code>
-  </a>
- </span>
-</dt>
-<dd>
-<p>Commands that should be added to top of <code class="filename">.zshrc</code>.</p>
-
-<p><span class="emphasis"><em>Type:</em></span>
-strings concatenated with “\n”</p>
-
-<p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">&quot;&quot;</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -78156,7 +78205,7 @@ boolean</p>
 package</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">&lt;derivation kdeconnect-kde-24.12.3&gt;</code></p>
+<code class="literal">&lt;derivation kdeconnect-kde-25.04.0&gt;</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span>
 <code class="literal">pkgs.plasma5Packages.kdeconnect-kde</code></p>
