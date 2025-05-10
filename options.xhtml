@@ -21537,6 +21537,34 @@ boolean</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.distrobox.enableSystemdUnit"></a><a class="term" href="options.xhtml#opt-programs.distrobox.enableSystemdUnit"><code class="option">programs.distrobox.enableSystemdUnit</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whatever to enable a Systemd Unit that automatically rebuilds your
+containers when changes are detected.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/distrobox.nix" target="_top">
+&lt;home-manager/modules/programs/distrobox.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.distrobox.package"></a><a class="term" href="options.xhtml#opt-programs.distrobox.package"><code class="option">programs.distrobox.package</code>
   </a>
  </span>
@@ -40074,7 +40102,7 @@ attribute set of (submodule)</p>
     cemu.package = pkgs.cemu;
     pcsx2.config = {
       system.disable_screen_saver = true;
-      runner.executable_path = &quot;$\{pkgs.pcsx2}/bin/pcsx2-qt&quot;;
+      runner.runner_executable = &quot;$\{pkgs.pcsx2}/bin/pcsx2-qt&quot;;
     };
   };
 &#x27;&#x27;
@@ -40097,7 +40125,7 @@ attribute set of (submodule)</p>
 </dt>
 <dd>
 <p>The package to use for this runner, nix will try to find the executable for this package.
-A more specific path can be set by using settings.runner.executable_path instead.</p>
+A more specific path can be set by using settings.runner.runner_executable instead.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 null or package</p>
@@ -40168,7 +40196,7 @@ YAML value</p>
 </dd>
 <dt>
  <span class="term">
- <a id="opt-programs.lutris.runners._name_.settings.runner.executable_path"></a><a class="term" href="options.xhtml#opt-programs.lutris.runners._name_.settings.runner.executable_path"><code class="option">programs.lutris.runners.&lt;name&gt;.settings.runner.executable_path</code>
+ <a id="opt-programs.lutris.runners._name_.settings.runner.runner_executable"></a><a class="term" href="options.xhtml#opt-programs.lutris.runners._name_.settings.runner.runner_executable"><code class="option">programs.lutris.runners.&lt;name&gt;.settings.runner.runner_executable</code>
   </a>
  </span>
 </dt>
@@ -43826,6 +43854,9 @@ For any option not found will need to be done in your neovim’s config instead.
 <p><span class="emphasis"><em>Type:</em></span>
 TOML value</p>
 
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
 <p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
   fork = false;
   frame = &quot;full&quot;;
@@ -47363,7 +47394,7 @@ null or package</p>
 GUI and observing the changes in ~/.config/onlyoffice/DesktopEditors.conf.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-attribute set of (boolean or string)</p>
+attribute set of (atom (null, bool, int, float or string))</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">{ }</code></p>
@@ -64711,6 +64742,193 @@ attribute set of section of an INI file (attrs of INI atom (null, bool, int, flo
 <tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/watson.nix" target="_top">
 &lt;home-manager/modules/programs/watson.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.waveterm.enable"></a><a class="term" href="options.xhtml#opt-programs.waveterm.enable"><code class="option">programs.waveterm.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable waveterm.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/waveterm.nix" target="_top">
+&lt;home-manager/modules/programs/waveterm.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.waveterm.package"></a><a class="term" href="options.xhtml#opt-programs.waveterm.package"><code class="option">programs.waveterm.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The waveterm package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.waveterm</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/waveterm.nix" target="_top">
+&lt;home-manager/modules/programs/waveterm.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.waveterm.bookmarks"></a><a class="term" href="options.xhtml#opt-programs.waveterm.bookmarks"><code class="option">programs.waveterm.bookmarks</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Bookmark definitions for WaveTerm. Details about the format and the options
+can be found here: <a class="link" href="https://docs.waveterm.dev/config#webbookmarks-configuration"  target="_top">https://docs.waveterm.dev/config#webbookmarks-configuration</a>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  &quot;bookmark@claude&quot; = {
+    title = &quot;Claude&quot;;
+    url = &quot;https://claude.ai&quot;;
+  };
+  &quot;bookmark@github&quot; = {
+    title = &quot;GitHub&quot;;
+    url = &quot;https://github.com&quot;;
+  };
+  &quot;bookmark@google&quot; = {
+    title = &quot;Google&quot;;
+    url = &quot;https://www.google.com&quot;;
+  };
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/waveterm.nix" target="_top">
+&lt;home-manager/modules/programs/waveterm.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.waveterm.settings"></a><a class="term" href="options.xhtml#opt-programs.waveterm.settings"><code class="option">programs.waveterm.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration settings for WaveTerm. All available options can be
+found here: &lt;\https://docs.waveterm.dev/config#configuration-keys&gt;.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  &quot;app:dismissarchitecturewarning&quot; = false;
+  &quot;autoupdate:enabled&quot; = false;
+  &quot;term:fontfamily&quot; = &quot;JuliaMono&quot;;
+  &quot;term:fontsize&quot; = 12.0;
+  &quot;term:theme&quot; = &quot;my-custom-theme&quot;;
+  &quot;term:transparency&quot; = 0.5;
+  &quot;window:bgcolor&quot; = &quot;#000000&quot;;
+  &quot;window:blur&quot; = true;
+  &quot;window:opacity&quot; = 0.5;
+  &quot;window:reducedmotion&quot; = true;
+  &quot;window:showhelp&quot; = false;
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/waveterm.nix" target="_top">
+&lt;home-manager/modules/programs/waveterm.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.waveterm.themes"></a><a class="term" href="options.xhtml#opt-programs.waveterm.themes"><code class="option">programs.waveterm.themes</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>User defined terminal themes. All the details about available options and
+format can be found here: <a class="link" href="https://docs.waveterm.dev/config#terminal-theming"  target="_top">https://docs.waveterm.dev/config#terminal-theming</a>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  default-dark = {
+    background = &quot;#00000077&quot;;
+    black = &quot;#757575&quot;;
+    blue = &quot;#85aacb&quot;;
+    brightBlack = &quot;#727272&quot;;
+    brightBlue = &quot;#9ab6cb&quot;;
+    brightCyan = &quot;#b7b8cb&quot;;
+    brightGreen = &quot;#a3dd97&quot;;
+    brightMagenta = &quot;#cc8ecb&quot;;
+    brightRed = &quot;#cc9d97&quot;;
+    brightWhite = &quot;#f0f0f0&quot;;
+    brightYellow = &quot;#cbcaaa&quot;;
+    cmdtext = &quot;#f0f0f0&quot;;
+    cursorAccent = &quot;&quot;;
+    cyan = &quot;#74a7cb&quot;;
+    &quot;display:name&quot; = &quot;Default Dark&quot;;
+    &quot;display:order&quot; = 1;
+    foreground = &quot;#c1c1c1&quot;;
+    gray = &quot;#8b918a&quot;;
+    green = &quot;#76c266&quot;;
+    magenta = &quot;#cc72ca&quot;;
+    red = &quot;#cc685c&quot;;
+    selectionBackground = &quot;&quot;;
+    white = &quot;#c1c1c1&quot;;
+    yellow = &quot;#cbca9b&quot;;
+  };
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/waveterm.nix" target="_top">
+&lt;home-manager/modules/programs/waveterm.nix&gt;
 </a></code>
 </td></tr>
 </table>
