@@ -7886,6 +7886,32 @@ boolean</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-home.file._name_.ignorelinks"></a><a class="term" href="options.xhtml#opt-home.file._name_.ignorelinks"><code class="option">home.file.&lt;name&gt;.ignorelinks</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>When <code class="literal">recursive</code> is enabled, adds <code class="literal">-ignorelinks</code> flag to lndir</p><p>It causes lndir to not treat symbolic links in the source directory specially.
+The link created in the target directory will point back to the corresponding
+(symbolic link) file in the source directory. If the link is to a directory</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/files.nix" target="_top">
+&lt;home-manager/modules/files.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-home.file._name_.onChange"></a><a class="term" href="options.xhtml#opt-home.file._name_.onChange"><code class="option">home.file.&lt;name&gt;.onChange</code>
   </a>
  </span>
@@ -16894,7 +16920,8 @@ null or package</p>
  </span>
 </dt>
 <dd>
-<p>Bacon configuration.
+<p>Bacon configuration written to either <code class="filename">Library/Application Support/org.dystroy.bacon/prefs.toml</code>
+(darwin) or <code class="filename">$XDG_CONFIG_HOME/bacon/prefs.toml</code>.
 For available settings see <a class="link" href="https://dystroy.org/bacon/#global-preferences"  target="_top">https://dystroy.org/bacon/#global-preferences</a>.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
@@ -30908,6 +30935,96 @@ package</p>
 <tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/granted.nix" target="_top">
 &lt;home-manager/modules/programs/granted.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.halloy.enable"></a><a class="term" href="options.xhtml#opt-programs.halloy.enable"><code class="option">programs.halloy.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable halloy.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/halloy.nix" target="_top">
+&lt;home-manager/modules/programs/halloy.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.halloy.package"></a><a class="term" href="options.xhtml#opt-programs.halloy.package"><code class="option">programs.halloy.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The halloy package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.halloy</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/halloy.nix" target="_top">
+&lt;home-manager/modules/programs/halloy.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.halloy.settings"></a><a class="term" href="options.xhtml#opt-programs.halloy.settings"><code class="option">programs.halloy.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration settings for halloy. All available options can be
+found here: <a class="link" href="https://halloy.chat/configuration/index.html"  target="_top">https://halloy.chat/configuration/index.html</a>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+TOML value</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  &quot;buffer.channel.topic&quot; = {
+    enabled = true;
+  };
+  &quot;servers.liberachat&quot; = {
+    channels = [
+      &quot;#halloy&quot;
+    ];
+    nickname = &quot;halloy-user&quot;;
+    server = &quot;irc.libera.chat&quot;;
+  };
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/halloy.nix" target="_top">
+&lt;home-manager/modules/programs/halloy.nix&gt;
 </a></code>
 </td></tr>
 </table>
@@ -46060,6 +46177,91 @@ list of string</p>
 <tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/notmuch.nix" target="_top">
 &lt;home-manager/modules/programs/notmuch.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.numbat.enable"></a><a class="term" href="options.xhtml#opt-programs.numbat.enable"><code class="option">programs.numbat.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable Numbat.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/numbat.nix" target="_top">
+&lt;home-manager/modules/programs/numbat.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.numbat.package"></a><a class="term" href="options.xhtml#opt-programs.numbat.package"><code class="option">programs.numbat.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The numbat package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or package</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">pkgs.numbat</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/numbat.nix" target="_top">
+&lt;home-manager/modules/programs/numbat.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.numbat.settings"></a><a class="term" href="options.xhtml#opt-programs.numbat.settings"><code class="option">programs.numbat.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Options to add to <code class="filename">config.toml</code>. See
+<a class="link" href="https://numbat.dev/doc/cli-customization.html#configuration"  target="_top">https://numbat.dev/doc/cli-customization.html#configuration</a> for options.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+TOML value</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  exchange-rates = {
+    fetching-policy = &quot;on-first-use&quot;;
+  };
+  intro-banner = &quot;short&quot;;
+  prompt = &quot;&gt; &quot;;
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/numbat.nix" target="_top">
+&lt;home-manager/modules/programs/numbat.nix&gt;
 </a></code>
 </td></tr>
 </table>
@@ -67662,6 +67864,31 @@ YAML value</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.zellij.themes"></a><a class="term" href="options.xhtml#opt-programs.zellij.themes"><code class="option">programs.zellij.themes</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Each them is written to <code class="filename">$XDG_CONFIG_HOME/zellij/themes/NAME.kdl</code>.
+See <a class="link" href="https://zellij.dev/documentation/themes.html"  target="_top">https://zellij.dev/documentation/themes.html</a> for more information.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (YAML value or absolute path or strings concatenated with “\n”)</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">{ }</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zellij.nix" target="_top">
+&lt;home-manager/modules/programs/zellij.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.zen.enable"></a><a class="term" href="options.xhtml#opt-programs.zen.enable"><code class="option">programs.zen.enable</code>
   </a>
  </span>
@@ -80876,7 +81103,7 @@ boolean</p>
 package</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">&lt;derivation kdeconnect-kde-25.04.0&gt;</code></p>
+<code class="literal">&lt;derivation kdeconnect-kde-25.04.1&gt;</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span>
 <code class="literal">pkgs.plasma5Packages.kdeconnect-kde</code></p>
@@ -103353,6 +103580,32 @@ boolean</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-xdg.cacheFile._name_.ignorelinks"></a><a class="term" href="options.xhtml#opt-xdg.cacheFile._name_.ignorelinks"><code class="option">xdg.cacheFile.&lt;name&gt;.ignorelinks</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>When <code class="literal">recursive</code> is enabled, adds <code class="literal">-ignorelinks</code> flag to lndir</p><p>It causes lndir to not treat symbolic links in the source directory specially.
+The link created in the target directory will point back to the corresponding
+(symbolic link) file in the source directory. If the link is to a directory</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg.nix" target="_top">
+&lt;home-manager/modules/misc/xdg.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-xdg.cacheFile._name_.onChange"></a><a class="term" href="options.xhtml#opt-xdg.cacheFile._name_.onChange"><code class="option">xdg.cacheFile.&lt;name&gt;.onChange</code>
   </a>
  </span>
@@ -103613,6 +103866,32 @@ boolean</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-xdg.configFile._name_.ignorelinks"></a><a class="term" href="options.xhtml#opt-xdg.configFile._name_.ignorelinks"><code class="option">xdg.configFile.&lt;name&gt;.ignorelinks</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>When <code class="literal">recursive</code> is enabled, adds <code class="literal">-ignorelinks</code> flag to lndir</p><p>It causes lndir to not treat symbolic links in the source directory specially.
+The link created in the target directory will point back to the corresponding
+(symbolic link) file in the source directory. If the link is to a directory</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg.nix" target="_top">
+&lt;home-manager/modules/misc/xdg.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-xdg.configFile._name_.onChange"></a><a class="term" href="options.xhtml#opt-xdg.configFile._name_.onChange"><code class="option">xdg.configFile.&lt;name&gt;.onChange</code>
   </a>
  </span>
@@ -103855,6 +104134,32 @@ null or boolean</p>
 by the managed file source. Warning, this will silently
 delete the target regardless of whether it is a file or
 link.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg.nix" target="_top">
+&lt;home-manager/modules/misc/xdg.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-xdg.dataFile._name_.ignorelinks"></a><a class="term" href="options.xhtml#opt-xdg.dataFile._name_.ignorelinks"><code class="option">xdg.dataFile.&lt;name&gt;.ignorelinks</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>When <code class="literal">recursive</code> is enabled, adds <code class="literal">-ignorelinks</code> flag to lndir</p><p>It causes lndir to not treat symbolic links in the source directory specially.
+The link created in the target directory will point back to the corresponding
+(symbolic link) file in the source directory. If the link is to a directory</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 boolean</p>
@@ -104944,6 +105249,32 @@ null or boolean</p>
 by the managed file source. Warning, this will silently
 delete the target regardless of whether it is a file or
 link.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/misc/xdg.nix" target="_top">
+&lt;home-manager/modules/misc/xdg.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-xdg.stateFile._name_.ignorelinks"></a><a class="term" href="options.xhtml#opt-xdg.stateFile._name_.ignorelinks"><code class="option">xdg.stateFile.&lt;name&gt;.ignorelinks</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>When <code class="literal">recursive</code> is enabled, adds <code class="literal">-ignorelinks</code> flag to lndir</p><p>It causes lndir to not treat symbolic links in the source directory specially.
+The link created in the target directory will point back to the corresponding
+(symbolic link) file in the source directory. If the link is to a directory</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 boolean</p>
