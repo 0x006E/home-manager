@@ -20392,7 +20392,7 @@ TOML value</p>
     images = true;
     autofocus = true;
   };
-  pager.&quot;C-k&quot; = &quot;() =&gt; pager.load(&#x27;https://duckduckgo.com/?=&#x27;)&quot;;
+  page.&quot;C-k&quot; = &quot;() =&gt; pager.load(&#x27;ddg:&#x27;)&quot;;
 }
 
 </code></pre>
@@ -74405,16 +74405,6 @@ list of (submodule)</p>
 
 <p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">[
   {
-    # will source zsh-autosuggestions.plugin.zsh
-    name = &quot;zsh-autosuggestions&quot;;
-    src = pkgs.fetchFromGitHub {
-      owner = &quot;zsh-users&quot;;
-      repo = &quot;zsh-autosuggestions&quot;;
-      rev = &quot;v0.4.0&quot;;
-      sha256 = &quot;0z6i9wjjklb4lvr7zjhbphibsyx51psv50gm07mbb0kj9058j6kc&quot;;
-    };
-  }
-  {
     name = &quot;enhancd&quot;;
     file = &quot;init.sh&quot;;
     src = pkgs.fetchFromGitHub {
@@ -74424,9 +74414,39 @@ list of (submodule)</p>
       sha256 = &quot;0iqa9j09fwm6nj5rpip87x3hnvbbz9w9ajgm6wkrd5fls8fn8i5g&quot;;
     };
   }
+{
+  name = &quot;wd&quot;;
+  src = pkgs.zsh-wd;
+  file = &quot;share/wd/wd.plugin.zsh&quot;;
+  completions = [ &quot;share/zsh/site-functions&quot; ];
+}
 ]
 
 </code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zsh.nix" target="_top">
+&lt;home-manager/modules/programs/zsh.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.zsh.plugins._.completions"></a><a class="term" href="options.xhtml#opt-programs.zsh.plugins._.completions"><code class="option">programs.zsh.plugins.*.completions</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Paths of additional functions to add to <code class="envar">fpath</code>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">[ ]</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -74444,7 +74464,9 @@ list of (submodule)</p>
  </span>
 </dt>
 <dd>
-<p>The plugin script to source.</p>
+<p>The plugin script to source.
+Required if the script name does not match <code class="filename">name.plugin.zsh</code>
+using the plugin <code class="option">name</code> from the plugin <code class="option">src</code>.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 string</p>
@@ -74465,8 +74487,7 @@ string</p>
  </span>
 </dt>
 <dd>
-<p>The name of the plugin.</p><p>Don’t forget to add <code class="option">file</code>
-if the script name does not follow convention.</p>
+<p>The name of the plugin.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 string</p>
@@ -85741,6 +85762,137 @@ package</p>
 <tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/lorri.nix" target="_top">
 &lt;home-manager/modules/services/lorri.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.ludusavi.enable"></a><a class="term" href="options.xhtml#opt-services.ludusavi.enable"><code class="option">services.ludusavi.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable Ludusavi game backup tool.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Example:</em></span>
+<code class="literal">true</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/ludusavi.nix" target="_top">
+&lt;home-manager/modules/services/ludusavi.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.ludusavi.backupNotification"></a><a class="term" href="options.xhtml#opt-services.ludusavi.backupNotification"><code class="option">services.ludusavi.backupNotification</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Send a notification message after a successful backup.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">false</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/ludusavi.nix" target="_top">
+&lt;home-manager/modules/services/ludusavi.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.ludusavi.configFile"></a><a class="term" href="options.xhtml#opt-services.ludusavi.configFile"><code class="option">services.ludusavi.configFile</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Path to a Ludusavi <code class="literal">config.yaml</code>. Mutually exclusive with the <code class="literal">settings</code> option.
+See https://github.com/mtkennerly/ludusavi/blob/master/docs/help/configuration-file.md for available options.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or absolute path</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/ludusavi.nix" target="_top">
+&lt;home-manager/modules/services/ludusavi.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.ludusavi.settings"></a><a class="term" href="options.xhtml#opt-services.ludusavi.settings"><code class="option">services.ludusavi.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Ludusavi configuration as an attribute set. See
+https://github.com/mtkennerly/ludusavi#configuration-file
+for available options.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+YAML value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting">{
+  backup = {
+    path = &quot;$XDG_STATE_HOME/backups/ludusavi&quot;;
+  };
+  manifest = {
+    url = &quot;https://raw.githubusercontent.com/mtkennerly/ludusavi-manifest/master/data/manifest.yaml&quot;;
+  };
+  restore = {
+    path = &quot;$XDG_STATE_HOME/backups/ludusavi&quot;;
+  };
+  roots = [ ];
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
+  backup = {
+    path = &quot;~/.local/state/backups/ludusavi&quot;;
+  };
+  language = &quot;en-US&quot;;
+  restore = {
+    path = &quot;~/.local/state/backups/ludusavi&quot;;
+  };
+  roots = [
+    {
+      path = &quot;~/.local/share/Steam&quot;;
+      store = &quot;steam&quot;;
+    }
+  ];
+  theme = &quot;light&quot;;
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/ludusavi.nix" target="_top">
+&lt;home-manager/modules/services/ludusavi.nix&gt;
 </a></code>
 </td></tr>
 </table>
