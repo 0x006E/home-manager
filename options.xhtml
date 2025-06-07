@@ -24648,8 +24648,9 @@ attribute set of (submodule)</p>
 <code class="literal">{ }</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">{
-  &quot;alt-s&quot;.command = &quot;fish_commandline_prepend sudo&quot;;
   &quot;alt-shift-b&quot;.command = &quot;fish_commandline_append bat&quot;;
+  &quot;alt-s&quot;.erase = true;
+  &quot;alt-s&quot;.operate = &quot;preset&quot;;
 }
 
 </code></pre>
@@ -24670,7 +24671,7 @@ attribute set of (submodule)</p>
  </span>
 </dt>
 <dd>
-<p>Whether to enable enable the bind.</p>
+<p>Whether to enable enable the bind. Set false if you want to ignore the bind.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 boolean</p>
@@ -24700,7 +24701,10 @@ boolean</p>
 <p>command that will be execute</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-string or list of string</p>
+string or list of string (optional when erase is set to true)</p>
+
+<p><span class="emphasis"><em>Default:</em></span>
+<code class="literal">null</code></p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -71197,7 +71201,7 @@ boolean</p>
 <p>The zed-editor package to use.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-package</p>
+null or package</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
 <code class="literal">pkgs.zed-editor</code></p>
@@ -71338,7 +71342,7 @@ attribute set of (JSON value or absolute path or strings concatenated with “\n
 JSON value</p>
 
 <p><span class="emphasis"><em>Default:</em></span>
-<code class="literal">{ }</code></p>
+<code class="literal">[ ]</code></p>
 
 <p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting">[
   {
